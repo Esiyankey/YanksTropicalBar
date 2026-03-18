@@ -7,15 +7,19 @@ import Testimonials from "./components/Testimonials";
 import GallerySection from "./components/GallerySection";
 import Footer from "./components/Footer";
 import GoldenStandardCTA from "./components/StandardCTA";
+import AboutSection from "./components/AboutSection";
+import BookingSection from "./components/booking";
 
 export default function Home() {
   return (
     <>
     
       <HeroCarousel />
-      <ServicesSection />
-      <MenuSection />
-      <PackagesSection />
+      <BookingSection />
+      <AboutSection/>
+      <ServicesSection/>
+      {/* <MenuSection />
+      <PackagesSection /> */}
       <Testimonials />
       <GallerySection />
       <GoldenStandardCTA
