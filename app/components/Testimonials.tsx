@@ -26,7 +26,7 @@ export default function Testimonials() {
           <span className="text-yellow-500 font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">
             Guest Reviews
           </span>
-          <h2 className="text-2xl md:text-3xl font-serif text-white leading-tight">
+          <h2 className="text-2xl md:text-3xl  text-white leading-tight">
             Words from our Guests
           </h2>
         </div>
@@ -35,7 +35,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div 
               key={i} 
-              className="group bg-white/[0.03] border border-white/10 p-7 rounded-xl hover:bg-white/[0.06] transition-all duration-300"
+              className="group bg-white/3 border border-white/10 p-7 rounded-xl hover:bg-white/6 transition-all duration-300"
             >
               {/* Star Rating - Smaller */}
               <div className="flex gap-0.5 mb-4">

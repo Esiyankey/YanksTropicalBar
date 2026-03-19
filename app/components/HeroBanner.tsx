@@ -48,7 +48,7 @@ export default function HeroCarousel() {
             />
           </div>
         ))}
-        <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-4">
+        <div className="relative z-20 flex h-full flex-col mt-4 md:mt-0 items-center justify-center text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

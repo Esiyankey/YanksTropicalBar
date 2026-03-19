@@ -11,7 +11,7 @@ export default function MenuSection() {
             <p className="text-sm font-semibold tracking-widest text-gray-600 mb-4">
               CUSTOMER FAVORITES
             </p>
-            <h2 className="text-4xl lg:text-5xl font-serif font-bold text-black mb-6">
+            <h2 className="text-4xl lg:text-5xl  font-bold text-black mb-6">
               A Taste of the Golden Menu
             </h2>
             <div className="flex justify-center">
@@ -31,7 +31,7 @@ export default function MenuSection() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-lg font-serif font-bold text-black">
+              <h3 className="text-lg font-bold text-black">
                 Signature Sobolo
               </h3>
             </div>
@@ -46,7 +46,7 @@ export default function MenuSection() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-lg font-serif font-bold text-black">
+              <h3 className="text-lg font-bold text-black">
                 Sweet Asana
               </h3>
             </div>
@@ -61,7 +61,7 @@ export default function MenuSection() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-lg font-serif font-bold text-black">
+              <h3 className="text-lg font-bold text-black">
                 Spicy Koose
               </h3>
             </div>
@@ -76,7 +76,7 @@ export default function MenuSection() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-lg font-serif font-bold text-black">
+              <h3 className="text-lg font-bold text-black">
                 Honey Togbei
               </h3>
             </div>

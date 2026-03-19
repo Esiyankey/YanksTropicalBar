@@ -1,11 +1,9 @@
-import Navbar from "./components/Navbar";
 import HeroCarousel from "./components/HeroBanner";
 import ServicesSection from "./components/Services";
-import MenuSection from "./components/menuSection";
-import PackagesSection from "./components/PackagesSection";
+
 import Testimonials from "./components/Testimonials";
 import GallerySection from "./components/GallerySection";
-import Footer from "./components/Footer";
+
 import GoldenStandardCTA from "./components/StandardCTA";
 import AboutSection from "./components/AboutSection";
 import BookingSection from "./components/booking";
@@ -13,11 +11,10 @@ import BookingSection from "./components/booking";
 export default function Home() {
   return (
     <>
-    
       <HeroCarousel />
       <BookingSection />
-      <AboutSection/>
-      <ServicesSection/>
+      <AboutSection />
+      <ServicesSection />
       {/* <MenuSection />
       <PackagesSection /> */}
       <Testimonials />
@@ -28,7 +25,6 @@ export default function Home() {
         primaryButtonText="Reserve Now"
         secondaryButtonText="Contact Us"
       />
-    
     </>
   );
 }

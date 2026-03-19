@@ -4,14 +4,25 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FacebookIcon, Instagram, TwitterIcon, Menu, X } from "lucide-react";
-
+import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isActiveLink, setIsActiveLink] = useState("");
+
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const currentPath = pathname || "/";
+    setIsActiveLink(currentPath);
+  }, [pathname]);
+
+
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Adjust scroll threshold as needed
+      setIsScrolled(window.scrollY > 50); 
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,12 +31,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`text-white bg-transparent absolute top-0 left-0 w-full z-50 ${isScrolled ? "bg-white shadow-lg fixed w-full text-black" : "bg-transparent"}`}
+      className={`text-white bg-transparent absolute top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-white shadow-lg fixed w-full text-black transition-all duration-500" : "bg-transparent"}`}
     >
       <div className="max-w-7xl mx-auto ">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center  gap-3">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/yanks_tropical_logo.png"
               alt="Yanks Tropical Bar"
@@ -33,39 +44,43 @@ export default function Navbar() {
               height={180}
               className="h-24 w-auto"
             />
-            <span className={isScrolled ? "text-gray-500" : "text-white"}>Yanks Tropical Bar </span>
+            <span className={`hidden md:flex ${isScrolled ? "text-gray-500 text-lg" : "text-white"}`}>Yanks Tropical Bar </span>
           </Link>
 
           <div className="flex items-center gap-6">
             {/* DESKTOP MENU (UNCHANGED) */}
             <div className={`${isScrolled ? " text-gray-500 border-r-gray-500" : ""} hidden border-r-2 border-r-gray-50 font-meduim md:flex items-center gap-10 text-lg text-gray-50`}>
-              <Link href="/" className="text-[#f75128] transition-colors">
+              <Link href="/" className={isActiveLink === "/" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"} >
                 Home
               </Link>
-              <Link href="/about" className="hover:text-[#b44125] transition-colors">
+              <Link href="/about" className={isActiveLink === "/about" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"} >
                 About
               </Link>
               <Link
                 href="/services"
-                className="hover:text-[#b44125] transition-colors"
+                className={isActiveLink === "/services" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"}
+              
               >
                 Services
               </Link>
               <Link
                 href="/menu"
-                className="hover:text-[#b44125] transition-colors"
+                className={isActiveLink === "/menu" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"}
+             
               >
                 Menu
               </Link>
               <Link
                 href="/gallery"
-                className="hover:text-[#b44125] transition-colors"
+                className={isActiveLink === "/gallery" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"}
+                
               >
                 Gallery
               </Link>
               <Link
                 href="/contact"
-                className="hover:text-[#b44125] pr-2 transition-colors"
+                className={isActiveLink === "/contact" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"}
+             
               >
                 Contact
               </Link>
@@ -88,8 +103,8 @@ export default function Navbar() {
             </div>
 
             {/* MOBILE MENU BUTTON (NEW) */}
-            <button onClick={() => setOpen(!open)} className={`md:hidden mr-2 ${isScrolled ? "text-gray-500" : "text-gray-50"}`}>
-              {open ? <X size={28} /> : <Menu size={28} />}
+            <button onClick={() => setOpen(!open)} className={`md:hidden mr-3 ${isScrolled ? "text-gray-500" : "text-gray-50"}`}>
+              {open ? <X size={28} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -97,7 +112,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN (NEW) */}
       <div
-        className={`md:hidden absolute  top-full left-0 w-full bg-black/90 backdrop-blur-md transition-all duration-300 ${
+        className={`md:hidden absolute  top-full left-0 w-full bg-black/90 backdrop-blur-md transition-ease duration-600 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >

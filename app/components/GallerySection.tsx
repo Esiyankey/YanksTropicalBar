@@ -24,7 +24,7 @@ export default function GallerySection() {
             </span>
             <span className="h-px w-8 bg-orange-500"></span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif text-[#1A2E26] leading-tight">
+          <h2 className="text-3xl md:text-5xl  text-[#1A2E26] leading-tight">
             Moments from Yanks
           </h2>
         </div>

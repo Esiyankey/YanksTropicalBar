@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <Image className="relative h-20 w-20 rounded-full flex items-center justify-center text-white font-bold" src="/images/yanks_tropical_logo.png" alt="Yanks Tropical Bar" width={40} height={40} />
-                <h4 className="text-lg font-serif font-bold text-black">
+                <h4 className="text-lg font-bold text-black">
                   Yanks Tropical Bar
                 </h4>
               </div>
