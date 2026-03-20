@@ -55,7 +55,7 @@ export default function HeroCarousel() {
             transition={{ duration: 1 }}
             className="flex flex-col items-center"
           >
-            <span className="bg-yellow-500 text-black px-6 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider mb-6">
+            <span className="bg-yellow-500 text-black px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               Authentic Ghanaian Refreshments
             </span>
 

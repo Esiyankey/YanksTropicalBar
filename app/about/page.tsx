@@ -3,6 +3,7 @@
 
 import { CookingPotIcon, DrillIcon, FlowerIcon } from 'lucide-react';
 import Image from 'next/image';
+import HeroSection from '../components/HeroSection';
 
 export default function AboutUs() {
 
@@ -31,21 +32,11 @@ export default function AboutUs() {
 
 
       {/* Hero Section */}
-      <header className="relative h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
-        <Image 
-          src="/images/setup1.jpg" 
-          alt="Luxury Dining"
-          fill
-          className="object-cover brightness-[0.45]"
-          priority
-        />
-        <div className="relative z-10 max-w-3xl mt-20 px-6">
-          <h1 className="text-5xl md:text-6xl  mb-6 leading-tight">The Soul of the Calabash</h1>
-          <p className="text-lg md:text-xl font-light leading-relaxed text-gray-200">
-            Preserving the vibrant heritage of Ghanaian refreshments through authentic craftsmanship and premium hospitality.
-          </p>
-        </div>
-      </header>
+      <HeroSection
+      title="The Soul of the Calabash"
+      description="Preserving the vibrant heritage of Ghanaian refreshments through authentic craftsmanship and premium hospitality."
+      image="/images/setup1.jpg"
+    />
 
       {/* Our Heritage */}
       <section className="max-w-7xl mx-auto px-6 md:px-16 py-24 grid md:grid-cols-2 gap-20 items-center">

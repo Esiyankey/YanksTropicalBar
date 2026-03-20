@@ -40,9 +40,9 @@ export default function Navbar() {
             <Image
               src="/images/yanks_tropical_logo.png"
               alt="Yanks Tropical Bar"
-              width={180}
-              height={180}
-              className="h-24 w-auto"
+              width={150}
+              height={150}
+              className="h-16 w-auto"
             />
             <span className={`hidden md:flex ${isScrolled ? "text-gray-500 text-lg" : "text-white"}`}>Yanks Tropical Bar </span>
           </Link>
