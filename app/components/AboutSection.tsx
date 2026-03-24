@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Dancing_Script } from 'next/font/google';
+import Link from 'next/link';
 
 const dancingScript = Dancing_Script({ subsets: ['latin'] });
 
@@ -58,9 +59,12 @@ export default function AboutSection() {
           ))}
         </ul>
 
+<Link href="/about">
+
         <button className="bg-[#ffa132] hover:bg-[#ff8c1a] text-white px-10 py-5 font-bold uppercase tracking-widest transition-colors flex items-center gap-2">
           Read More <span>→</span>
         </button>
+</Link>
       </div>
     </section>
   );
