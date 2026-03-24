@@ -60,7 +60,7 @@ export default function HeroCarousel() {
             </span>
 
             {/* Minimized Headline */}
-            <h1 className="text-4xl font-serif md:text-8xl font-semibold text-white leading-[1.1] drop-shadow-lg  tracking-tight">
+            <h1 className="text-5xl font-serif md:text-8xl font-semibold text-white leading-[1.1] drop-shadow-lg  tracking-tight">
               Elevate Your <br /> <span className="text-yellow-500">Celebration</span>
             </h1>
 
