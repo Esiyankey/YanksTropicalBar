@@ -11,7 +11,7 @@ export default function GallerySection() {
           {/* Top: Food Plate - Exactly half height */}
           <div className="relative flex-1 w-full bg-gray-100 overflow-hidden">
             <Image
-              src="/images/setup3.jpg" 
+              src="/images/image13.jpeg" 
               alt="Featured Dish"
               fill
               className="object-cover"
@@ -21,7 +21,7 @@ export default function GallerySection() {
           {/* Bottom: Gift Certificate - Exactly half height */}
           <div className="relative flex-1 w-full overflow-hidden">
             <Image
-              src="/images/setup2.jpg" 
+              src="/images/image11.jpeg" 
               alt="Grill background"
               fill
               className="object-cover"
@@ -48,7 +48,7 @@ export default function GallerySection() {
         {/* RIGHT COLUMN (Tall Single Image) */}
         <div className="flex-1 relative h-full overflow-hidden">
           <Image
-            src="/images/setup1.jpg" 
+            src="/images/image12.jpeg" 
             alt="Restaurant Atmosphere"
             fill
             className="object-cover"
