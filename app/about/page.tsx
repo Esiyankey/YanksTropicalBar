@@ -11,19 +11,19 @@ export default function AboutUs() {
   {
     title: "Sun-Dried Hibiscus",
     description: "Sourced directly from northern farmers, our petals are sun-dried to lock in that deep flavor.",
-    image: "/images/sobolo.jpg",
+    image: "/images/image6.jpeg",
     icon: <FlowerIcon/>
   },
   {
     title: "Traditional Brewing",
     description: "Using large clay pots, we allow our asana to ferment naturally, developing a unique profile.",
-    image: "/images/s2.jpg",
+    image: "/images/image2.jpeg",
     icon: <DrillIcon/>
   },
   {
     title: "Signature Spice Blends",
     description: "Ginger, cloves, and grains of paradise are freshly crushed for every batch.",
-    image: "/images/s4.jpg",
+    image: "/images/image5.jpeg",
     icon: <CookingPotIcon/>
   }
 ];

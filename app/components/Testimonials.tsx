@@ -7,13 +7,13 @@ export default function Testimonials() {
       name: "Akosua Mensah",
       role: "Wedding Engagement",
       content: "The Golden celebration made our engagement ceremony unforgettable. The Sobolo was the talk of the day, and the presentation was pure royalty.",
-      image: "/images/lamugine.jpg"
+      image: "/images/couple.jpg"
     },
     {
       name: "David Boateng",
       role: "Corporate Launch",
       content: "The corporate launch was a success thanks to their professional service. Our expatriate clients loved the Asana and the cultural touch.",
-      image: "/images/kokoro.jpg"
+      image: "/images/couple2.jpg"
     }
   ]
 
