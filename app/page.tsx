@@ -15,8 +15,7 @@ export default function Home() {
       <BookingSection />
       <AboutSection />
       <ServicesSection />
-      {/* <MenuSection />
-      <PackagesSection /> */}
+
       <Testimonials />
       <GallerySection />
       <GoldenStandardCTA

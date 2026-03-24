@@ -45,50 +45,59 @@ export default function AboutUs() {
             Our Heritage
           </span>
           <h2 className="text-4xl md:text-5xl  text-gray-900 mb-8 leading-tight">From Humble Roots <br/>to Royal Tables</h2>
-          <p className="text-[#b44125] font-semibold text-lg mb-6 italic">A journey that began in a family kitchen in Kumasi.</p>
-          <div className="space-y-6 text-gray-600 leading-relaxed text-md">
-            <p>Golden Calabash was born from a desire to bring the refreshing flavors of our childhood into the modern spotlight. What started as a small family recipe for the perfect Sobolo—balancing the tartness of hibiscus with the sharp warmth of ginger—has evolved into Accra’s premier cultural catering service.</p>
-            <p>We believe every drink tells a story. The asana that marks a successful trade, the lamuche that cools a midday heat... we ensure these traditions never fade, but rather shine brighter than ever.</p>
-          </div>
-        </div>
-        <div className="relative order-1 md:order-2 group">
-          <div className="aspect-4/5 relative overflow-hidden rounded-2xl shadow-2xl">
-            <Image 
-              src="/images/image3.jpeg" 
-              alt="Cultural Heritage"
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          {/* WhatsApp Floating Button Overlay */}
-          <div className="absolute -right-5 top-1/2 -translate-y-1/2 bg-[#25D366]  rounded-full shadow-xl cursor-pointer hover:scale-110 transition-transform">
-             <svg className="w-12 h-12 text-white fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.984-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.115-.693-.921-.693-1.756 0-.835.432-1.245.586-1.42.155-.174.337-.218.45-.218.112 0 .225.001.323.005.105.004.244-.04.381.285.144.343.493 1.203.536 1.29.043.086.072.187.015.302-.058.115-.086.187-.173.287-.086.1-.181.223-.258.295-.086.081-.176.17-.076.341.1.171.444.733.953 1.186.655.583 1.207.764 1.38.85.171.086.273.072.373-.043.1-.115.432-.504.547-.677.115-.173.23-.144.388-.086.158.058 1.006.475 1.179.561.171.087.287.129.331.201.044.072.044.417-.1.822z"/></svg>
-          </div>
-        </div>
-      </section>
+          <p className="text-[#b44125] font-semibold text-lg mb-6 italic">
+  A journey that began in a family kitchen, now bringing flavor and joy across Ghana.
+</p>
+<div className="space-y-6 text-gray-600 leading-relaxed text-md">
+  <p>
+    Yanks Tropical Bar was born from a love for local flavors and community celebrations. What started as a simple recipe for the perfect Sobolo—blending the tartness of hibiscus with the warmth of ginger—has grown into a trusted catering service bringing drinks, fruit juices, and snacks to every occasion.
+  </p>
+  <p>
+    Every drink and setup tells a story. From refreshing asana to cooling lamuche, we honor tradition while creating memorable moments. Our goal is simple: make every event lively, vibrant, and unforgettable.
+  </p>
+</div>
+</div>
+<div className="relative order-1 md:order-2 group">
+  <div className="aspect-4/5 relative overflow-hidden rounded-2xl shadow-2xl">
+    <Image 
+      src="/images/image3.jpeg" 
+      alt="Cultural Heritage"
+      fill
+      className="object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  </div>
+  {/* WhatsApp Floating Button Overlay */}
+  <div className="absolute -right-5 top-1/2 -translate-y-1/2 bg-[#25D366] rounded-full shadow-xl cursor-pointer hover:scale-110 transition-transform">
+     <svg className="w-12 h-12 text-white fill-current" viewBox="0 0 24 24">
+       <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.984-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.115-.693-.921-.693-1.756 0-.835.432-1.245.586-1.42.155-.174.337-.218.45-.218.112 0 .225.001.323.005.105.004.244-.04.381.285.144.343.493 1.203.536 1.29.043.086.072.187.015.302-.058.115-.086.187-.173.287-.086.1-.181.223-.258.295-.086.081-.176.17-.076.341.1.171.444.733.953 1.186.655.583 1.207.764 1.38.85.171.086.273.072.373-.043.1-.115.432-.504.547-.677.115-.173.23-.144.388-.086.158.058 1.006.475 1.179.561.171.087.287.129.331.201.044.072.044.417-.1.822z"/>
+     </svg>
+  </div>
+</div>
 
-      {/* Proverb Quote */}
-      <section className="bg-[#fdf8f6] py-10 text-center px-6">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-6xl text-[#d98c7a]  block mb-4 opacity-50 italic">“</span>
-          <p className="text-3xl md:text-4xl text-gray-700 leading-[1.4]   font-light">
-            The calabash that brings water to the thirsty never breaks its silence; it only speaks through the refreshment it provides.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <div className="h-px w-8 bg-[#b44125]"></div>
-            <p className="text-xs tracking-[0.3em] text-[#7a2d1a] uppercase font-bold">Traditional Akan Proverb</p>
-            <div className="h-px w-8 bg-[#b44125]"></div>
-          </div>
-        </div>
-      </section>
-      <section className="max-w-7xl mx-auto px-6 md:px-16 py-24">
-      {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl  text-gray-900 mb-6">The Art of Preparation</h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-          We honor the slow, intentional methods of our ancestors. No shortcuts, no artificial flavors—only the purest gifts from the Ghanaian soil.
-        </p>
-      </div>
+{/* Proverb Quote */}
+<section className="bg-[#fdf8f6] py-10 text-center px-6">
+  <div className="max-w-4xl mx-auto">
+    <span className="text-6xl text-[#d98c7a] block mb-4 opacity-50 italic">“</span>
+    <p className="text-3xl md:text-4xl text-gray-700 leading-[1.4] font-light">
+      The calabash that brings refreshment speaks louder than words—it delivers joy, culture, and flavor in every sip.
+    </p>
+    <div className="mt-10 flex items-center justify-center gap-4">
+      <div className="h-px w-8 bg-[#b44125]"></div>
+      <p className="text-xs tracking-[0.3em] text-[#7a2d1a] uppercase font-bold">Traditional Akan Proverb</p>
+      <div className="h-px w-8 bg-[#b44125]"></div>
+    </div>
+  </div>
+</section>
+
+<section className="max-w-7xl mx-auto px-6 md:px-16 py-24">
+  {/* Header */}
+  <div className="text-center mb-16">
+    <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">The Art of Preparation</h2>
+    <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+      We honor the time-honored methods of our ancestors. No shortcuts, no artificial flavors—only the purest ingredients and the freshest Ghanaian produce for an unforgettable experience.
+    </p>
+  </div>
+</section>
 
       {/* Grid */}
       <div className="grid md:grid-cols-3 gap-8">
