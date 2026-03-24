@@ -54,7 +54,7 @@ export default function AboutUs() {
         <div className="relative order-1 md:order-2 group">
           <div className="aspect-4/5 relative overflow-hidden rounded-2xl shadow-2xl">
             <Image 
-              src="/images/s2.jpg" 
+              src="/images/image3.jpeg" 
               alt="Cultural Heritage"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"

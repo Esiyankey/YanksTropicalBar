@@ -8,10 +8,10 @@ import { motion } from "framer-motion";
 
 export default function HeroCarousel() {
   const images = [
-    "/images/setup1.jpg",
-    "/images/s2.jpg",
-    "/images/setup2.jpg",
-    "/images/setup3.jpg",
+    "/images/image11.jpeg",
+    "/images/image10.jpeg",
+    "/images/image5.jpeg",
+    "/images/image2.jpeg",
   ];
 
   const [current, setCurrent] = useState(0);
@@ -25,7 +25,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-200 w-full">
+    <section className="relative h-193 w-full">
       <Navbar />
 
       <div className="relative h-screen w-full overflow-hidden">

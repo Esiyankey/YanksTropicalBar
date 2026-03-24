@@ -11,7 +11,7 @@ export default function AboutSection() {
       <div className="relative w-full lg:w-1/2 flex justify-start">
         <div className="relative w-4/5 aspect-[3/4] overflow-hidden rounded-md shadow-lg">
           <Image 
-            src="/images/setup3.jpg" 
+            src="/images/setup1.jpg" 
             alt="Wine pouring" 
             fill 
             className="object-cover"
@@ -21,7 +21,7 @@ export default function AboutSection() {
         {/* Overlapping Image with Next.js optimization */}
         <div className="absolute -bottom-10 -right-4 w-4/5 aspect-square  rounded-sm shadow-2xl overflow-hidden">
           <Image 
-            src="/images/setup1.jpg" 
+            src="/images/image11.jpeg" 
             alt="Dining table" 
             fill 
             className="object-cover"
@@ -31,7 +31,7 @@ export default function AboutSection() {
 
       {/* Content Side */}
       <div className="w-full lg:w-1/2">
-        <span className="bg-[#FF7D44] text-white px-3 py-1 text-sm font-bold uppercase tracking-tighter mb-6 inline-block">
+        <span className="bg-[#ffa132] rounded-full text-white px-3 py-1 text-sm font-bold uppercase tracking-tighter mb-6 inline-block">
           About Us
         </span>
         
@@ -53,12 +53,12 @@ export default function AboutSection() {
             "Wok-fry thin rice noodle. Rice noodle, chicken"
           ].map((item, i) => (
             <li key={i} className="flex items-center gap-3 text-gray-700">
-              <span className="text-[#f75128] text-xl">✓</span> {item}
+              <span className="text-[#ffa132] text-xl">✓</span> {item}
             </li>
           ))}
         </ul>
 
-        <button className="bg-[#f75128] hover:bg-[#fa633d] text-white px-10 py-5 font-bold uppercase tracking-widest transition-colors flex items-center gap-2">
+        <button className="bg-[#ffa132] hover:bg-[#ff8c1a] text-white px-10 py-5 font-bold uppercase tracking-widest transition-colors flex items-center gap-2">
           Read More <span>→</span>
         </button>
       </div>

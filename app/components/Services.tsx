@@ -22,7 +22,7 @@ export default function HeartSection() {
             providing personalized service to ensure that your event is a
             success.
           </p>
-          <button className="bg-[#D9A045] flex items-center gap-2 hover:bg-[#c48e3a] text-white text-xs font-bold py-4 px-10 rounded-full uppercase tracking-widest transition-all">
+          <button className="bg-[#ffa132] flex items-center gap-2 hover:bg-[#c48e3a] text-white text-xs font-bold py-4 px-10 rounded-full uppercase tracking-widest transition-all">
             Services
             <ArrowRight size={16} className="animate-caret-blink"/>
           </button>
@@ -32,7 +32,7 @@ export default function HeartSection() {
         <div className="relative order-1 md:order-2">
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-sm shadow-sm">
             <Image
-              src="/images/setup7.jpg"
+              src="/images/image12.jpeg"
               alt="Artisan sandwich"
               fill
               className="object-cover"
@@ -45,12 +45,14 @@ export default function HeartSection() {
 
       {/* Bottom Large Image */}
       <div className="mt-16 relative w-full aspect-21/9 overflow-hidden rounded-sm shadow-md">
-        <Image
-          src="/images/Buffet.jpg"
-          alt="Steak and greens"
-          fill
-          className="object-cover"
-        />
+        <video
+                src="/videos/video3.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="object-cover w-full h-full"
+              ></video>{" "}
       </div>
     </section>
   );

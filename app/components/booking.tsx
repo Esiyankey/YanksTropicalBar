@@ -56,7 +56,7 @@ export default function BookingSection() {
         </div>
 
         {/* Submit Button */}
-        <button className="w-full bg-[#FFB300] hover:bg-orange-500 text-slate-900 font-bold py-4 px-10 uppercase transition-all tracking-widest whitespace-nowrap">
+        <button className="w-full bg-[#ffa132] hover:bg-[#ff8c1a] text-slate-900 font-bold py-4 px-10 uppercase transition-all tracking-widest whitespace-nowrap">
           Book Us
         </button>
       </div>
