@@ -25,72 +25,89 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative h-193 w-full">
-      <Navbar />
+    <section className="relative h-screen w-full font-['Poppins']">
+     
 
-      <div className="relative h-screen w-full overflow-hidden">
-        {" "}
-        {/* Changed to h-screen for a true Hero feel */}
-        {/* 1. Image Carousel Layer */}
+      <div className="relative h-full w-full overflow-hidden">
+        {/* Image Carousel Layer */}
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-[3000ms] ${
+            className={`absolute inset-0 transition-opacity duration-1000 ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           >
             <Image
               src={image}
-              alt="hero image"
+              alt="Yanks Tropical Bar"
               fill
               className="object-cover"
               priority={index === 0}
             />
           </div>
         ))}
-        <div className="relative z-20 flex h-full flex-col mt-4 md:mt-0 items-center justify-center text-center px-4">
+
+        {/* Content Layer - Refined Alignment */}
+        <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-6">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="flex flex-col items-center"
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center max-w-4xl"
           >
-            <span className="bg-yellow-500 text-black px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
-              Authentic Ghanaian Refreshments
+            <span className="bg-yellow-500/90 text-black px-5 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-8 shadow-lg">
+              Event Catering & Mixology
             </span>
 
-            {/* Main Title */}
-            <h1 className="text-6xl md:text-9xl font-bold text-white leading-tight drop-shadow-2xl">
-              Yanks Tropical <br /> Bar
+            {/* Minimized Headline */}
+            <h1 className="text-4xl font-serif md:text-8xl font-semibold text-white leading-[1.1] drop-shadow-lg  tracking-tight">
+              Elevate Your <br /> <span className="text-yellow-500">Celebration</span>
             </h1>
 
-            {/* Bottom Section: Scroll Indicator */}
+            {/* Concise Subheadline */}
+            <p className="text-white/90 text-xs md:text-sm mt-6 max-w-2xl leading-relaxed font-medium drop-shadow-md">
+              From Weddings to Corporate Galas. Experience the finest Sobolo, 
+              Asana, and Craft Cocktails paired with gourmet local snacks.
+            </p>
+
+            {/* Refined CTA */}
+            <div className="mt-10 flex flex-col md:flex-row gap-4">
+              <button className="bg-[#f75128] hover:bg-[#d6411d] text-white px-8 py-3 rounded-full text-sm font-bold transition-all shadow-xl hover:shadow-[#f75128]/20">
+                Book the Experience
+              </button>
+              <button className="border border-white/50 hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold backdrop-blur-sm transition-all">
+                View Menu
+              </button>
+            </div>
+
+            {/* Scroll Indicator */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="mt-12 flex flex-col items-center"
+              className="absolute bottom-10 flex flex-col items-center"
             >
-              <span className="text-white text-xs tracking-[0.3em] uppercase mb-4 opacity-80">
-                Scroll to explore
+              <span className="text-white text-[10px] tracking-[0.4em] uppercase mb-3 opacity-60">
+                Explore
               </span>
-
-              <div className="text-[#f75128] animate-bounce cursor-pointer">
-                <ArrowDown size={32} />
+              <div className="text-yellow-500 animate-bounce">
+                <ArrowDown size={24} />
               </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      {/* Subtle Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
+      
+      {/* Pagination dots */}
+      <div className="absolute bottom-12 right-12 flex flex-col gap-3 z-30 hidden md:flex">
         {images.map((_, index) => (
           <div
             key={index}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${
-              index === current ? "bg-white scale-105 w-6" : "bg-white/50"
+            className={`w-1 rounded-full transition-all duration-500 ${
+              index === current ? "bg-yellow-500 h-8" : "bg-white/30 h-4"
             }`}
           />
         ))}
