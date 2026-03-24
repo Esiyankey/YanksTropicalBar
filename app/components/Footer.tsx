@@ -44,11 +44,11 @@ export default function Footer() {
             <div>
               <h5 className="text-sm font-bold tracking-widest text-black mb-6">EXPLORE</h5>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">About</a></li>
-                <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Services</a></li>
-                <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Menu</a></li>
-                <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Gallery</a></li>
-                <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Contact</a></li>
+                <li><a href="/about" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">About</a></li>
+                <li><a href="/services" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Services</a></li>
+                <li><a href="/menu" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Menu</a></li>
+                <li><a href="/gallery" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Gallery</a></li>
+                <li><a href="/contact" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Contact</a></li>
               </ul>
             </div>
 
@@ -59,7 +59,6 @@ export default function Footer() {
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Weddings & Engagements</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Corporate Functions</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Private Parties</a></li>
-                <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Cultural Festivals</a></li>
               </ul>
             </div>
 
@@ -71,19 +70,19 @@ export default function Footer() {
                   <svg className="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
                   </svg>
-                  <span className="text-gray-700 text-sm">East Legon, Accra, Ghana</span>
+                  <span className="text-gray-700 text-sm">Community 5 , Tema, Ghana</span>
                 </li>
                 <li className="flex gap-3">
                   <svg className="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
-                  <span className="text-gray-700 text-sm">+233 24 000 0000</span>
+                  <span className="text-gray-700 text-sm">+233 54 462 0083</span>
                 </li>
                 <li className="flex gap-3">
                   <svg className="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
-                  <span className="text-gray-700 text-sm">hello@goldencalabash.com</span>
+                  <span className="text-gray-700 text-sm">abigailyankey1992@gmail.com</span>
                 </li>
               </ul>
             </div>
@@ -92,7 +91,7 @@ export default function Footer() {
           {/* Footer Bottom */}
           <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
             <p className="text-sm text-gray-600">
-              © 2026 Golden Calabash Catering. All rights reserved.
+              © 2026 Yanks Catering Services. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-sm text-gray-600 hover:text-red-600 transition-colors duration-300">

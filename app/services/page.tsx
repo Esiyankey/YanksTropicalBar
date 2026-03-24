@@ -1,6 +1,8 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import Image from "next/image";
+import Link from "next/link";
+import { Plus } from "lucide-react";
 
 const Page = () => {
   return (
@@ -16,13 +18,13 @@ const Page = () => {
           {/* Large Tall Image */}
           <div className="relative rounded-3xl overflow-hidden h-[550px] shadow-lg">
             <video
-                src="/videos/video5.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="object-cover w-full h-full"
-              ></video>{" "}
+              src="/videos/video5.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="object-cover w-full h-full"
+            ></video>{" "}
             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
               <div className="border-l-4 border-[#FF5C28] pl-4">
                 <h3 className="text-2xl font-bold">WEDDINGS</h3>
@@ -56,22 +58,24 @@ const Page = () => {
                 From the bustling streets of Accra to the coast, we bring the
                 best of Ghana to your table.
               </p>
-              <button className="text-[#FF5C28] font-bold hover:underline">
-                View Menu →
-              </button>
+              <Link href="/menu">
+                <button className="text-[#FF5C28] font-bold hover:underline">
+                  View Menu →
+                </button>
+              </Link>
             </div>
           </div>
 
           {/* Right Card */}
           <div className="relative rounded-3xl overflow-hidden h-[300px] md:h-full shadow-md">
             <video
-                src="/videos/video3.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="object-cover w-full h-full"
-              ></video>{" "}
+              src="/videos/video3.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="object-cover w-full h-full"
+            ></video>{" "}
             <div className="absolute inset-0 bg-black/30 flex items-center p-6 text-white">
               <div className="border-l-4 border-[#FF5C28] pl-4">
                 <h4 className="font-bold text-xl">CORPORATE EVENTS</h4>
@@ -81,35 +85,78 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="max-w-xl mx-auto text-center mb-12 px-4">
-          <h1 className="text-2xl font-serif italic text-gray-800 leading-relaxed">
-            &quot;Nested in the heart of Ghana, Yanks Tropical Bar invites you
-            to experience an exciting journey through our unique blend of
-            Ghanaian flavors... &quot;
-          </h1>
-        </div>
-
-        {/* Top Mini-Gallery */}
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
-            {[5, 6, 9].map((i) => (
-              <div
-                key={i}
-                className="relative aspect-[3/4] w-full  overflow-hidden shadow-sm"
-              >
-                <Image
-                  src={`/images/image${i}.jpeg`}
-                  alt="Restaurant interior"
-                  fill
-                  className="object-cover"
-                  sizes="(max-w-768px) 100vw, 33vw"
-                />
+      <section className="py-24 bg-[#FAFAFA] font-['Poppins'] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          
+          {/* Left Side: Asymmetric Image Composition */}
+          <div className="relative w-full lg:w-1/2 flex gap-4 h-[500px]">
+            {/* Main Featured Image */}
+            <div className="relative w-2/3 h-full rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-500">
+              <Image 
+                src="/images/image5.jpeg" 
+                alt="Main Service" 
+                fill 
+                className="object-cover"
+              />
+            </div>
+            
+            {/* Stacked Side Images */}
+            <div className="flex flex-col gap-4 w-1/3 h-full">
+              <div className="relative h-1/2 rounded-2xl overflow-hidden shadow-md">
+                <Image src="/images/image6.jpeg" alt="Detail 1" fill className="object-cover" />
               </div>
-            ))}
+              <div className="relative h-1/2 rounded-2xl overflow-hidden shadow-md border-4 border-white">
+                <Image src="/images/image9.jpeg" alt="Detail 2" fill className="object-cover" />
+                {/* Visual "Add-on" Badge */}
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                   <div className="bg-white/90 p-2 rounded-full">
+                      <Plus className="text-[#f75128]" size={20} />
+                   </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* Right Side: Content with "Add-on" Focus */}
+          <div className="w-full lg:w-1/2 space-y-8">
+            <div className="inline-flex items-center gap-2 bg-[#f75128]/10 text-[#f75128] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+              <Plus size={14} /> 
+              Exclusive Add-ons
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              The Perfect <span className="text-[#f75128]">Tropical</span> <br /> 
+              Accompaniments
+            </h2>
+
+            <p className="text-gray-600 text-lg leading-relaxed max-w-lg font-light">
+              Elevate your primary package with our curated selections. From hand-pressed Sobolo to artisan Ghanaian snacks, these additions bring the soul of the islands to your event.
+            </p>
+
+            {/* Feature List - Minimalist Style */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+              <div className="flex flex-col border-l-2 border-gray-200 pl-4 hover:border-[#f75128] transition-colors">
+                <span className="font-bold text-gray-900">Custom Mixology</span>
+                <span className="text-sm text-gray-500">Bespoke tropical cocktails</span>
+              </div>
+              <div className="flex flex-col border-l-2 border-gray-200 pl-4 hover:border-[#f75128] transition-colors">
+                <span className="font-bold text-gray-900">Gourmet Small Chops</span>
+                <span className="text-sm text-gray-500">Traditional snacks, elevated</span>
+              </div>
+            </div>
+
+            <button className="group mt-8 flex items-center gap-3 text-gray-900 font-bold text-lg hover:text-[#f75128] transition-colors">
+              Customize Your Package
+              <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#f75128] group-hover:bg-[#f75128] group-hover:text-white transition-all">
+                <Plus size={20} />
+              </div>
+            </button>
+          </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Hero-Style Split Section */}
       <section className="max-w-7xl mx-auto px-6 py-12 font-['Poppins']">
@@ -123,7 +170,7 @@ const Page = () => {
               traditional recipes.
             </p>
             <button className="bg-[#FF5C28] hover:bg-[#e04a1d] text-white px-8 py-3 rounded-full w-fit transition-all">
-              Order Now
+              Book Us Now
             </button>
 
             {/* The Overlapping Circular Image */}
