@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
@@ -17,15 +18,17 @@ export default function HeartSection() {
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed ">
             Whether youre planning a wedding, a corporate event, or a birthday
-            party, we are here to make your special day unforgettable.  We
+            party, we are here to make your special day unforgettable. We
             understand that every event is unique, and we are committed to
             providing personalized service to ensure that your event is a
             success.
           </p>
-          <button className="bg-[#ffa132] flex items-center gap-2 hover:bg-[#c48e3a] text-white text-xs font-bold py-4 px-10 rounded-full uppercase tracking-widest transition-all">
-            Services
-            <ArrowRight size={16} className="animate-caret-blink"/>
-          </button>
+          <Link href="/services">
+            <button className="bg-[#ffa132] flex items-center gap-2 hover:bg-[#c48e3a] text-white text-xs font-bold py-4 px-10 rounded-full uppercase tracking-widest transition-all">
+              Services
+              <ArrowRight size={16} className="animate-caret-blink" />
+            </button>
+          </Link>
         </div>
 
         {/* Right Column: Upper Image & Badge */}
@@ -46,13 +49,13 @@ export default function HeartSection() {
       {/* Bottom Large Image */}
       <div className="mt-16 relative w-full aspect-21/9 overflow-hidden rounded-sm shadow-md">
         <video
-                src="/videos/video3.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="object-cover w-full h-full"
-              ></video>{" "}
+          src="/videos/video3.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover w-full h-full"
+        ></video>{" "}
       </div>
     </section>
   );
