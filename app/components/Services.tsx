@@ -46,8 +46,8 @@ export default function HeartSection() {
         </div>
       </div>
 
-      {/* Bottom Large Image */}
-      <div className="mt-16 relative w-full aspect-21/9 overflow-hidden rounded-sm shadow-md">
+      {/* Bottom Large Video */}
+      <div className="mt-16 relative w-full aspect-21/12  md:aspect-21/9 overflow-hidden rounded-sm shadow-md">
         <video
           src="/videos/video3.mp4"
           autoPlay
