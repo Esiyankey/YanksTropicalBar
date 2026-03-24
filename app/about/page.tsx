@@ -141,7 +141,7 @@ export default function AboutUs() {
                 <div className="relative group">
                   <div className="aspect-square relative overflow-hidden rounded-3xl shadow-2xl">
                     <Image
-                      src="/images/setup4.jpg"
+                      src="/images/setup3.jpg"
                       alt="Event setup with calabashes"
                       fill
                       className="object-cover transition-transform duration-1000 group-hover:scale-105"
