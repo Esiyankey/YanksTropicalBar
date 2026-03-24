@@ -13,7 +13,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Yanks Tropical Bar",
-  description: "Experience the Ultimate in Event Catering and Mixology with Yanks Tropical Bar. From weddings to corporate events, we bring the tropical vibes and unforgettable flavors to your special occasions. Book us today and let us make your event truly unforgettable!",
+ description: 'Juices and Catering Services for Events',
+  icons: {
+    icon: '/favicon-16x16.ico', 
+  },
 };
 
 export default function RootLayout({
