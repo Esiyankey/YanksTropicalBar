@@ -1,10 +1,11 @@
 "use client";
 
 import Navbar from "./Navbar";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown} from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function HeroCarousel() {
   const images = [
@@ -76,7 +77,9 @@ export default function HeroCarousel() {
                 Book the Experience
               </button>
               <button className="border border-white/50 hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold backdrop-blur-sm transition-all">
+              <Link href="/menu" >
                 View Menu
+              </Link>
               </button>
             </div>
 

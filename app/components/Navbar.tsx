@@ -79,7 +79,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/contact"
-                className={isActiveLink === "/contact" ? "text-[#f75128]" : "hover:text-[#b44125] transition-colors"}
+                className={isActiveLink === "/contact" ? "text-[#f75128]" : "hover:text-[#b44125] pr-3 transition-colors"}
              
               >
                 Contact
