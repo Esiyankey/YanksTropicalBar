@@ -76,10 +76,12 @@ export default function GalleryPage() {
       </section>
 
       <GoldenStandardCTA
-        title="Experience the Tropical Standard"
-        subtitle="Discover the unique flavors and experiences that set us apart"
-        primaryButtonText="Book Your Event"
-        secondaryButtonText="Explore Our Menu"
+        title="Enjoy all the Golden Moments"
+        subtitle="From our kitchen to your event, we create unforgettable experiences. "
+        primaryButtonLink="/contact"
+        primaryButtonText="Contact Us"
+        secondaryButtonLink="/about"
+        secondaryButtonText="About Us"
         backgroundColor="bg-red-800"
         textColor="text-white"
       />

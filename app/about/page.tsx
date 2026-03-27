@@ -150,7 +150,9 @@ export default function AboutUs() {
      <GoldenStandardCTA
         title="Experience the Tropical Standard"
         subtitle="Discover the unique flavors and experiences that set us apart"
+        primaryButtonLink="/contact"
         primaryButtonText="Book Your Event"
+        secondaryButtonLink="/menu"
         secondaryButtonText="Explore Our Menu"
         backgroundColor="bg-red-800"
         textColor="text-white"
