@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,12 +11,11 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"], // important!
 });
 
-
 export const metadata: Metadata = {
   title: "Yanks Tropical Bar",
- description: 'Juices and Catering Services for Events',
+  description: "Juices and Catering Services for Events",
   icons: {
-    icon: '/favicon-16x16.ico', 
+    icon: "/favicon-16x16.ico",
   },
 };
 
@@ -25,13 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"  className={poppins.variable}>
-      <body
-        className={`${poppins.variable} antialiased`}
-      >
-        <Navbar/>
+    <html lang="en" className={poppins.variable}>
+      <body className={`${poppins.variable} antialiased`}>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );

@@ -6,19 +6,22 @@ export default function AboutUs() {
   const preparationSteps = [
     {
       title: "Sun-Dried Hibiscus",
-      description: "Sourced directly from northern farmers, our petals are sun-dried to lock in that deep flavor.",
+      description:
+        "Sourced directly from northern farmers, our petals are sun-dried to lock in that deep flavor.",
       image: "/images/image6.jpeg",
       icon: <FlowerIcon />,
     },
     {
       title: "Traditional Brewing",
-      description: "Using large clay pots, we allow our asana to ferment naturally, developing a unique profile.",
+      description:
+        "Using large clay pots, we allow our asana to ferment naturally, developing a unique profile.",
       image: "/images/image2.jpeg",
       icon: <DrillIcon />,
     },
     {
       title: "Signature Spice Blends",
-      description: "Ginger, cloves, and grains of paradise are freshly crushed for every batch.",
+      description:
+        "Ginger, cloves, and grains of paradise are freshly crushed for every batch.",
       image: "/images/image5.jpeg",
       icon: <CookingPotIcon />,
     },
@@ -44,10 +47,14 @@ export default function AboutUs() {
             </h2>
             <div className="space-y-6 text-gray-600 leading-relaxed text-base md:text-lg">
               <p>
-                Yanks Tropical Bar was born from a love for local flavors and community celebrations. What started as a simple recipe for the perfect Sobolo has grown into a trusted catering service.
+                Yanks Tropical Bar was born from a love for local flavors and
+                community celebrations. What started as a simple recipe for the
+                perfect Sobolo has grown into a trusted catering service.
               </p>
               <p>
-                Every drink and setup tells a story. From refreshing asana to cooling lamuche, we honor tradition while creating memorable moments.
+                Every drink and setup tells a story. From refreshing asana to
+                cooling lamuche, we honor tradition while creating memorable
+                moments.
               </p>
             </div>
           </div>
@@ -69,7 +76,8 @@ export default function AboutUs() {
       <section className="bg-[#fdf8f6] py-20 text-center px-6">
         <div className="max-w-3xl mx-auto">
           <p className="text-2xl md:text-3xl text-gray-700 font-serif italic leading-snug">
-            "The calabash that brings refreshment speaks louder than words—it delivers joy, culture, and flavor in every sip."
+            &ldquo;The calabash that brings refreshment speaks louder than
+            words—it delivers joy, culture, and flavor in every sip.&rdquo;
           </p>
           <p className="mt-8 text-[10px] tracking-[0.4em] text-[#b44125] uppercase font-bold">
             Traditional Akan Proverb
@@ -99,7 +107,9 @@ export default function AboutUs() {
               More Than Just <br /> Catering
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              We don't just serve drinks; we set the stage. Our signature setups feature hand-carved calabashes and live garnishing stations that turn refreshment into a performance.
+              We dont just serve drinks; we set the stage. Our signature setups
+              feature hand-carved calabashes and live garnishing stations that
+              turn refreshment into a performance.
             </p>
           </div>
         </div>
@@ -110,7 +120,10 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {preparationSteps.map((step, index) => (
-              <div key={index} className="group relative h-[400px] overflow-hidden rounded-2xl">
+              <div
+                key={index}
+                className="group relative h-[400px] overflow-hidden rounded-2xl"
+              >
                 <Image
                   src={step.image}
                   alt={step.title}
@@ -119,10 +132,12 @@ export default function AboutUs() {
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                   <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                   <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {step.description}
-                   </p>
+                  </p>
                 </div>
               </div>
             ))}
@@ -133,7 +148,9 @@ export default function AboutUs() {
       {/* 5. CTA - Clean & Simple */}
       <section className="bg-[#b44125] py-20 text-center text-white px-6">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-serif mb-8">Ready to experience the golden standard?</h2>
+          <h2 className="text-3xl md:text-5xl font-serif mb-8">
+            Ready to experience the golden standard?
+          </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="bg-white text-[#b44125] px-8 py-3 rounded-full font-bold hover:bg-orange-50 transition-colors">
               Book Your Event

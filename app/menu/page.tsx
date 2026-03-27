@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import HeroSection from "../components/HeroSection";
 import Image from "next/image";
@@ -6,12 +6,16 @@ import { menuItems } from "../data/menuData";
 
 const MenuPage = () => {
   // Get unique categories from data
-  const categories = ["all", ...new Set(menuItems.map((item) => item.category))];
+  const categories = [
+    "all",
+    ...new Set(menuItems.map((item) => item.category)),
+  ];
   const [activeTab, setActiveTab] = useState("drinks");
 
-  const filteredItems = activeTab === "all" 
-    ? menuItems 
-    : menuItems.filter((item) => item.category === activeTab);
+  const filteredItems =
+    activeTab === "all"
+      ? menuItems
+      : menuItems.filter((item) => item.category === activeTab);
 
   return (
     <>
@@ -26,7 +30,6 @@ const MenuPage = () => {
       {/* MENU SECTION: Switched to Light Cream Background (#F9F7F2) */}
       <section className="py-24 px-4 md:px-8 min-h-screen font-serif bg-[#F9F7F2] text-[#1A1A1A]">
         <div className="max-w-5xl mx-auto">
-          
           {/* TABS NAVIGATION */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-20 border-b border-black/5 pb-6">
             {categories.map((category) => (
@@ -49,7 +52,6 @@ const MenuPage = () => {
 
           {/* DYNAMIC MENU GRID */}
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-14">
-            
             {/* Vertical Divider for Desktop (Darker for light background) */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-black/5 -translate-x-1/2"></div>
 
@@ -87,10 +89,11 @@ const MenuPage = () => {
           {/* Empty State */}
           {filteredItems.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-400 italic">No items available in this category yet.</p>
+              <p className="text-gray-400 italic">
+                No items available in this category yet.
+              </p>
             </div>
           )}
-
         </div>
       </section>
     </>

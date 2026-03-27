@@ -86,77 +86,96 @@ const Page = () => {
       </section>
 
       <section className="py-24 bg-[#FAFAFA] font-['Poppins'] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          
-          {/* Left Side: Asymmetric Image Composition */}
-          <div className="relative w-full lg:w-1/2 flex gap-4 h-[500px]">
-            {/* Main Featured Image */}
-            <div className="relative w-2/3 h-full rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-500">
-              <Image 
-                src="/images/image5.jpeg" 
-                alt="Main Service" 
-                fill 
-                className="object-cover"
-              />
-            </div>
-            
-            {/* Stacked Side Images */}
-            <div className="flex flex-col gap-4 w-1/3 h-full">
-              <div className="relative h-1/2 rounded-2xl overflow-hidden shadow-md">
-                <Image src="/images/image6.jpeg" alt="Detail 1" fill className="object-cover" />
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            {/* Left Side: Asymmetric Image Composition */}
+            <div className="relative w-full lg:w-1/2 flex gap-4 h-[500px]">
+              {/* Main Featured Image */}
+              <div className="relative w-2/3 h-full rounded-3xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-500">
+                <Image
+                  src="/images/image5.jpeg"
+                  alt="Main Service"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="relative h-1/2 rounded-2xl overflow-hidden shadow-md border-4 border-white">
-                <Image src="/images/image9.jpeg" alt="Detail 2" fill className="object-cover" />
-                {/* Visual "Add-on" Badge */}
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                   <div className="bg-white/90 p-2 rounded-full">
+
+              {/* Stacked Side Images */}
+              <div className="flex flex-col gap-4 w-1/3 h-full">
+                <div className="relative h-1/2 rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src="/images/image6.jpeg"
+                    alt="Detail 1"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-1/2 rounded-2xl overflow-hidden shadow-md border-4 border-white">
+                  <Image
+                    src="/images/image9.jpeg"
+                    alt="Detail 2"
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Visual "Add-on" Badge */}
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="bg-white/90 p-2 rounded-full">
                       <Plus className="text-[#f75128]" size={20} />
-                   </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Side: Content with "Add-on" Focus */}
-          <div className="w-full lg:w-1/2 space-y-8">
-            <div className="inline-flex items-center gap-2 bg-[#f75128]/10 text-[#f75128] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
-              <Plus size={14} /> 
-              Exclusive Add-ons
+            {/* Right Side: Content with "Add-on" Focus */}
+            <div className="w-full lg:w-1/2 space-y-8">
+              <div className="inline-flex items-center gap-2 bg-[#f75128]/10 text-[#f75128] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                <Plus size={14} />
+                Exclusive Add-ons
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                The Perfect <span className="text-[#f75128]">Tropical</span>{" "}
+                <br />
+                Accompaniments
+              </h2>
+
+              <p className="text-gray-600 text-lg leading-relaxed max-w-lg font-light">
+                Elevate your primary package with our curated selections. From
+                hand-pressed Sobolo to artisan Ghanaian snacks, these additions
+                bring the soul of the islands to your event.
+              </p>
+
+              {/* Feature List - Minimalist Style */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                <div className="flex flex-col border-l-2 border-gray-200 pl-4 hover:border-[#f75128] transition-colors">
+                  <span className="font-bold text-gray-900">
+                    Custom Mixology
+                  </span>
+                  <span className="text-sm text-gray-500">
+                    Bespoke tropical cocktails
+                  </span>
+                </div>
+                <div className="flex flex-col border-l-2 border-gray-200 pl-4 hover:border-[#f75128] transition-colors">
+                  <span className="font-bold text-gray-900">
+                    Gourmet Small Chops
+                  </span>
+                  <span className="text-sm text-gray-500">
+                    Traditional snacks, elevated
+                  </span>
+                </div>
+              </div>
+
+              <button className="group mt-8 flex items-center gap-3 text-gray-900 font-bold text-lg hover:text-[#f75128] transition-colors">
+                Customize Your Package
+                <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#f75128] group-hover:bg-[#f75128] group-hover:text-white transition-all">
+                  <Plus size={20} />
+                </div>
+              </button>
             </div>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              The Perfect <span className="text-[#f75128]">Tropical</span> <br /> 
-              Accompaniments
-            </h2>
-
-            <p className="text-gray-600 text-lg leading-relaxed max-w-lg font-light">
-              Elevate your primary package with our curated selections. From hand-pressed Sobolo to artisan Ghanaian snacks, these additions bring the soul of the islands to your event.
-            </p>
-
-            {/* Feature List - Minimalist Style */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-              <div className="flex flex-col border-l-2 border-gray-200 pl-4 hover:border-[#f75128] transition-colors">
-                <span className="font-bold text-gray-900">Custom Mixology</span>
-                <span className="text-sm text-gray-500">Bespoke tropical cocktails</span>
-              </div>
-              <div className="flex flex-col border-l-2 border-gray-200 pl-4 hover:border-[#f75128] transition-colors">
-                <span className="font-bold text-gray-900">Gourmet Small Chops</span>
-                <span className="text-sm text-gray-500">Traditional snacks, elevated</span>
-              </div>
-            </div>
-
-            <button className="group mt-8 flex items-center gap-3 text-gray-900 font-bold text-lg hover:text-[#f75128] transition-colors">
-              Customize Your Package
-              <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#f75128] group-hover:bg-[#f75128] group-hover:text-white transition-all">
-                <Plus size={20} />
-              </div>
-            </button>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Hero-Style Split Section */}
       <section className="max-w-7xl mx-auto px-6 py-12 font-['Poppins']">

@@ -52,9 +52,9 @@ export default function AboutSection() {
         </span>
 
         <h2
-          className={`${dancingScript.className} text-5xl md:text-6xl text-slate-900 mb-6 leading-tight`}
+          className=" text-5xl md:text-6xl text-slate-900 mb-6 leading-tight"
         >
-          Yanks Tropical Bar <br /> Drinks & Catering Services
+          Yanks Tropical Bar
         </h2>
 
         <p className="text-gray-500 text-lg mb-8 max-w-lg">
