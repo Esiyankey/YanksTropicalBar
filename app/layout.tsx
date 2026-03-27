@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Toaster } from "sonner";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"], // important!
-});
+import { Playfair_Display } from "next/font/google";
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800", "900"], 
+  style: ["normal", "italic"],
+});
 export const metadata: Metadata = {
   title: "Yanks Tropical Bar",
   description: "Juices and Catering Services for Events",
@@ -25,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body className={`${poppins.variable} antialiased`}>
+    <html lang="en" className={playfair.variable}>
+      <body className={`${playfair.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />
