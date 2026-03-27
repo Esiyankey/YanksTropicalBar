@@ -1,6 +1,7 @@
 import { CookingPotIcon, DrillIcon, FlowerIcon } from "lucide-react";
 import Image from "next/image";
 import HeroSection from "../components/HeroSection";
+import GoldenStandardCTA from "../components/StandardCTA";
 
 export default function AboutUs() {
   const preparationSteps = [
@@ -89,7 +90,7 @@ export default function AboutUs() {
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
           {/* Constrained Image Container */}
-          <div className="w-full md:w-[450px]">
+          <div className="w-full md:w-112.5">
             <div className="aspect-square relative overflow-hidden rounded-3xl shadow-xl">
               <Image
                 src="/images/setup3.jpg"
@@ -146,21 +147,14 @@ export default function AboutUs() {
       </section>
 
       {/* 5. CTA - Clean & Simple */}
-      <section className="bg-[#b44125] py-20 text-center text-white px-6">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-serif mb-8">
-            Ready to experience the golden standard?
-          </h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-[#b44125] px-8 py-3 rounded-full font-bold hover:bg-orange-50 transition-colors">
-              Book Your Event
-            </button>
-            <button className="border border-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-[#b44125] transition-colors">
-              Our Menu
-            </button>
-          </div>
-        </div>
-      </section>
+     <GoldenStandardCTA
+        title="Experience the Tropical Standard"
+        subtitle="Discover the unique flavors and experiences that set us apart"
+        primaryButtonText="Book Your Event"
+        secondaryButtonText="Explore Our Menu"
+        backgroundColor="bg-red-800"
+        textColor="text-white"
+      />
     </div>
   );
 }

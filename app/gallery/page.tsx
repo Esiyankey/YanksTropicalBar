@@ -77,9 +77,11 @@ export default function GalleryPage() {
 
       <GoldenStandardCTA
         title="Experience the Tropical Standard"
-        description="From our kitchen to your celebration, we bring the golden standard of catering and mixology to every event. Let's make your next gathering unforgettable."
-        buttonText="Book Your Event"
-        buttonLink="/contact"
+        subtitle="Discover the unique flavors and experiences that set us apart"
+        primaryButtonText="Book Your Event"
+        secondaryButtonText="Explore Our Menu"
+        backgroundColor="bg-red-800"
+        textColor="text-white"
       />
     </div>
   );
