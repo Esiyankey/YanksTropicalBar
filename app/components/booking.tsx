@@ -41,7 +41,7 @@ export default function BookingSection() {
   };
 
   return (
-    <section className="bg-[#FDFCF9] py-20 px-6 flex flex-col items-center text-center">
+    <section id="booking" className="bg-[#FDFCF9] py-20 px-6 flex flex-col items-center text-center">
       {/* Header Section */}
       <div className="mb-10">
         <h3 className="text-orange-400 text-3xl mb-2">Book us</h3>

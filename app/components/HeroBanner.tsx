@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "./Navbar";
-import { ArrowDown} from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -27,8 +27,6 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative h-screen w-full font-['Poppins']">
-     
-
       <div className="relative h-full w-full overflow-hidden">
         {/* Image Carousel Layer */}
         {images.map((image, index) => (
@@ -62,24 +60,31 @@ export default function HeroCarousel() {
 
             {/* Minimized Headline */}
             <h1 className="text-5xl font-serif md:text-8xl font-semibold text-white leading-[1.1] drop-shadow-lg  tracking-tight">
-              Elevate Your <br /> <span className="text-yellow-500">Celebration</span>
+              Elevate Your <br />{" "}
+              <span className="text-yellow-500">Celebration</span>
             </h1>
 
             {/* Concise Subheadline */}
             <p className="text-white/90 text-xs md:text-sm mt-6 max-w-2xl leading-relaxed font-medium drop-shadow-md">
-              From Weddings to Corporate Galas. Experience the finest Sobolo, 
+              From Weddings to Corporate Galas. Experience the finest Sobolo,
               Asana, and Craft Cocktails paired with gourmet local snacks.
             </p>
 
             {/* Refined CTA */}
             <div className="mt-10 flex flex-col md:flex-row gap-4">
-              <button className="bg-[#f75128] hover:bg-[#d6411d] text-white px-8 py-3 rounded-full text-sm font-bold transition-all shadow-xl hover:shadow-[#f75128]/20">
+              <button
+                onClick={() => {
+                  const bookingSection = document.getElementById("booking");
+                  if (bookingSection) {
+                    bookingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="bg-[#f75128] hover:bg-[#d6411d] text-white px-8 py-3 rounded-full text-sm font-bold transition-all shadow-xl hover:shadow-[#f75128]/20"
+              >
                 Book the Experience
               </button>
               <button className="border border-white/50 hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold backdrop-blur-sm transition-all">
-              <Link href="/menu" >
-                View Menu
-              </Link>
+                <Link href="/menu">View Menu</Link>
               </button>
             </div>
 
@@ -103,7 +108,7 @@ export default function HeroCarousel() {
 
       {/* Subtle Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
-      
+
       {/* Pagination dots */}
       <div className="absolute bottom-12 right-12 flex flex-col gap-3 z-30 hidden md:flex">
         {images.map((_, index) => (
