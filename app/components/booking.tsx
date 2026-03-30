@@ -87,7 +87,7 @@ export default function BookingSection() {
             placeholder="Date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-[90%] border border-gray-300 py-4 px-5 text-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+            className="w-full border border-gray-300 py-4 px-5 text-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
           />
         </div>
 

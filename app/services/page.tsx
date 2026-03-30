@@ -188,9 +188,13 @@ const Page = () => {
               Experience the rich heritage of our cuisine with curated
               traditional recipes.
             </p>
+            <Link href="/contact">
+            
             <button className="bg-[#FF5C28] hover:bg-[#e04a1d] text-white px-8 py-3 rounded-full w-fit transition-all">
               Book Us Now
             </button>
+            
+            </Link>
 
             {/* The Overlapping Circular Image */}
             <div className="hidden lg:block absolute rounded-full -right-24 top-2/3 -translate-y-1/2 w-64 h-64  overflow-hidden shadow-2xl border-[2px] border-white">

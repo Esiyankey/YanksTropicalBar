@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GallerySection() {
   return (
@@ -28,19 +29,15 @@ export default function GallerySection() {
             />
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center text-center p-8">
-              <h3 className="text-white text-lg font-medium mb-1">
-                Want to Purchase a Gift Certificate?
-              </h3>
-              <div className="w-10 h-px bg-orange-400/50 mb-3"></div>
-              <p className="text-[11px] text-gray-300 max-w-65 leading-relaxed mb-6">
-                Whats the perfect way to tell someone that you care about them? 
-                Giving them a Gift Certificate! Its a unique gift for loved ones and friends.
-              </p>
+             
               
               {/* Lavender Contact Button */}
+              <Link href="/gallery">
+              
               <button className="bg-[#B5A9D4] hover:bg-[#a394c7] text-white px-7 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all">
-                Contact Us
+                View Gallery
               </button>
+              </Link>
             </div>
           </div>
         </div>
