@@ -88,7 +88,7 @@ export default function BookingSection() {
             required
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className=" box-border border border-gray-300 py-4 pr-30 text-gray-500 focus:outline-none focus:border-orange-400 transition-colors"
+            className=" box-border border border-gray-300 py-4 px-5 pr-30 text-gray-500 focus:outline-none focus:border-orange-400 transition-colors"
           />
         </div>
 
