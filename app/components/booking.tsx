@@ -41,7 +41,7 @@ export default function BookingSection() {
   };
 
   return (
-    <section id="booking" className="bg-[#FDFCF9] py-20 px-6 flex flex-col items-center text-center">
+    <section id="booking" className=" overflow-hiddenbg-[#FDFCF9] py-20 px-6 flex flex-col items-center text-center">
       {/* Header Section */}
       <div className="mb-10">
         <h3 className="text-orange-400 text-3xl mb-2">Book us</h3>
@@ -88,7 +88,7 @@ export default function BookingSection() {
             required
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full box-border border border-gray-300 py-4 px-5 text-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+            className=" box-border border border-gray-300 py-4 px-5 text-gray-500 focus:outline-none focus:border-orange-400 transition-colors"
           />
         </div>
 
