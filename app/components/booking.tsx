@@ -85,9 +85,10 @@ export default function BookingSection() {
           <input
             type="date"
             placeholder="Date"
+            required
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full border border-gray-300 py-4 px-5 text-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+            className="w-full box-border border border-gray-300 py-4 px-5 text-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
           />
         </div>
 
