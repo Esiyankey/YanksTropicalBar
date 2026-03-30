@@ -34,6 +34,10 @@ export default function BookingSection() {
       }
       console.log("Booking submitted successfully:", data);
       toast.success("Booking submitted successfully!");
+     setDate("")
+     setEmail("")
+     setEventType("")
+     setName("")
     } catch (error) {
       console.error("Error submitting booking:", error);
       toast.error("Failed to submit booking. Please try again.");
