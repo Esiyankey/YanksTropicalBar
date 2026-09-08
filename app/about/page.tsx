@@ -154,8 +154,7 @@ export default function AboutUs() {
         primaryButtonText="Book Your Event"
         secondaryButtonLink="/menu"
         secondaryButtonText="Explore Our Menu"
-        backgroundColor="bg-red-800"
-        textColor="text-white"
+      
       />
     </div>
   );
