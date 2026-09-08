@@ -8,15 +8,10 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isActiveLink, setIsActiveLink] = useState("");
 
-
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const currentPath = pathname || "/";
-    setIsActiveLink(currentPath);
-  }, [pathname]);
+  /* Derived straight from the router, so the active link is correct on the
+     first paint instead of one render late. */
+  const isActiveLink = usePathname() || "/";
 
 
 
