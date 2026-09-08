@@ -1,14 +1,19 @@
 import { create } from "zustand";
 
-type data={
+type Data = {
   name: string;
   email: string;
   subject: string;
   message: string;
-}
+};
 
+type StoreState = {
+  Data: Data;
+  setData: (data: Partial<Data>) => void;
+  clearData: () => void;
+};
 
-export const useStore = create((set) => ({
+export const useStore = create<StoreState>((set) => ({
   Data: {
     name: "",
     email: "",
@@ -16,9 +21,12 @@ export const useStore = create((set) => ({
     message: "",
   },
 
-  setData: (data: data) =>
-    set((state: { Data: data }) => ({
-      Data: { ...state.Data, ...data },
+  setData: (data) =>
+    set((state) => ({
+      Data: {
+        ...state.Data,
+        ...data,
+      },
     })),
 
   clearData: () =>

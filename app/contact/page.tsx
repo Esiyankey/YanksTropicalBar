@@ -23,7 +23,7 @@ type Data = {
 const ContactPage = () => {
   const { Data, setData, clearData } = useStore();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log("Contact Data:", Data);

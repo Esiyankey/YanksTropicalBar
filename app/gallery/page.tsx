@@ -82,8 +82,7 @@ export default function GalleryPage() {
         primaryButtonText="Contact Us"
         secondaryButtonLink="/about"
         secondaryButtonText="About Us"
-        backgroundColor="bg-red-800"
-        textColor="text-white"
+       
       />
     </div>
   );
