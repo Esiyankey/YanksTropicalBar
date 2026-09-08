@@ -11,7 +11,7 @@ export const menuItems = [
   { name: "Classic Sobolo", price: "Varies", description: "Traditional hibiscus spiced drink", image: "/images/sobolo.jpg", category: "local drinks" },
   { name: "Asaana", price: "Varies", description: "Caramelized corn drink", image: "/images/asana.jpg", category: "local drinks" },
   { name: "Lamugin", price: "Varies", description: "Spiced millet drink", image: "/images/lamugine.jpg", category: "local drinks" },
-  { name: "Palm Wine", price: "Varies", description: "Freshly tapped local palm wine", image: "/images/palm-wine.jpg", category: "local drinks" },
+  { name: "Palm Wine", price: "Varies", description: "Freshly tapped local palm wine", image: "/images/palm-wine.png", category: "local drinks" },
   { name: "Pito", price: "Varies", description: "Traditional fermented millet beer", image: "/images/pito.jpg", category: "local drinks" },
 
   // --- LOCAL SNACKS ---
