@@ -128,3 +128,23 @@
     @apply font-serif antialiased;
   }
 }
+/* --- Infinite right-to-left marquee (testimonials) --- */
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl {
+    animation: none;
+  }
+}
