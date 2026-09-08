@@ -83,11 +83,11 @@ function initials(name: string) {
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
     <div className="mr-5 w-[280px] shrink-0 sm:mr-6 sm:w-[340px]">
-      <div className="group flex h-full flex-col rounded-xl border border-white/10 bg-white/3 p-7 transition-all duration-300 hover:border-yellow-500/30 hover:bg-white/6">
+      <div className="group flex h-full flex-col rounded-xl border border-white/10 bg-white/3 p-7 transition-all duration-300 hover:border-gold/40 hover:bg-white/6">
         {/* Star Rating - Smaller */}
         <div className="mb-4 flex gap-0.5">
           {[...Array(5)].map((_, i) => (
-            <span key={i} className="text-xs text-yellow-500">★</span>
+            <span key={i} className="text-xs text-gold">★</span>
           ))}
         </div>
 
@@ -110,7 +110,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
             </div>
           ) : (
             <div
-              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${t.accent ?? 'from-yellow-500 to-amber-600'} text-[11px] font-bold tracking-wide text-white ring-1 ring-white/10`}
+              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br ${t.accent ?? 'from-gold to-brand'} text-[11px] font-bold tracking-wide text-white ring-1 ring-white/10`}
             >
               {initials(t.name)}
             </div>
@@ -131,13 +131,13 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 
 export default function Testimonials() {
   return (
-    <section className="overflow-hidden bg-[#0f172a] py-16">
+    <section className="overflow-hidden bg-ink py-16 sm:py-20 lg:py-24">
       {/* Header - Compact proportions */}
-      <div className="mx-auto mb-10 max-w-4xl px-6 text-center md:text-left">
-        <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-yellow-500">
+      <div className="mx-auto mb-12 max-w-7xl px-6 text-center md:text-left">
+        <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
           Guest Reviews
         </span>
-        <h2 className="text-2xl leading-tight text-white md:text-3xl">
+        <h2 className="font-display text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
           Words from our Guests
         </h2>
       </div>
@@ -145,8 +145,8 @@ export default function Testimonials() {
       {/* Marquee - slides right to left on every breakpoint */}
       <div className="group/marquee relative">
         {/* Edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#0f172a] to-transparent sm:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#0f172a] to-transparent sm:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-ink to-transparent sm:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-ink to-transparent sm:w-24" />
 
         <div
           className="animate-marquee-rtl flex w-max items-stretch group-hover/marquee:[animation-play-state:paused]"

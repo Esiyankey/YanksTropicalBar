@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  const { name, email, date, eventType } = await request.json();
+  const { name, email, phone, date, guests, eventType } = await request.json();
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -14,13 +14,23 @@ export async function POST(request: Request) {
     },
   });
 
+  const lines = [
+    `Event type: ${eventType}`,
+    `Date: ${date}`,
+    guests ? `Guests: ${guests}` : null,
+    ``,
+    `Name: ${name}`,
+    `Email: ${email}`,
+    phone ? `Phone: ${phone}` : null,
+  ].filter((line) => line !== null);
+
   try {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       replyTo: email,
       to: process.env.EMAIL_USER,
       subject: `New Booking from ${name}`,
-      text: `You have a new booking for ${eventType} on ${date}. Contact email: ${email}`,
+      text: `You have a new booking request.\n\n${lines.join("\n")}`,
     });
     return NextResponse.json(
       { message: "Booking submitted successfully!" },

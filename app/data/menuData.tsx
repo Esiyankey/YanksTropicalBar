@@ -1,10 +1,20 @@
-export const menuItems = [
+export type MenuItem = {
+  name: string;
+  price: string;
+  description: string;
+  image: string;
+  category: string;
+  /** Optional flag rendered as the badge on the card, e.g. "New" or "Popular". */
+  tag?: string;
+};
+
+export const menuItems: MenuItem[] = [
   // --- FRUIT JUICE ---
   { name: "Pineapple Juice", price: "Varies", description: "Freshly squeezed tropical pineapple", image: "/images/pineapple.jpg", category: "juice" },
   { name: "Orange Juice", price: "Varies", description: "Freshly squeezed tropical orange", image: "/images/orange-juice.png", category: "juice" },
   { name: "Watermelon Juice", price: "Varies", description: "Hydrating and fresh watermelon", image: "/images/watermellon.jpg", category: "juice" },
-  { name: "Mango Juice", price: "Varies", description: "Rich, velvety mango pulp", image: "/images/mango-juice.png", category: "juice" },
-  { name: "Tamarind Juice", price: "Varies", description: "Tangy and refreshing traditional tamarind", image: "/images/tamarind-juice.png", category: "juice" },
+  { name: "Mango Juice", tag: "New", price: "Varies", description: "Rich, velvety mango pulp", image: "/images/mango-juice.png", category: "juice" },
+  { name: "Tamarind Juice", tag: "New", price: "Varies", description: "Tangy and refreshing traditional tamarind", image: "/images/tamarind-juice.png", category: "juice" },
 
   // --- LOCAL DRINKS ---
   { name: "Classic Sobolo", price: "Varies", description: "Traditional hibiscus spiced drink", image: "/images/sobolo.jpg", category: "local drinks" },
@@ -25,15 +35,15 @@ export const menuItems = [
   { name: "Plantain Chips", price: "Varies", description: "Salty or spicy thinly sliced fried plantains", image: "/images/plantain.jpeg", category: "snacks" },
   { name: "Adakoa", price: "Varies", description: "Traditional spicy corn and peanut balls", image: "/images/adakoa.png", category: "snacks" },
   { name: "Bofrot", price: "Varies", description: "Soft, fluffy traditional Ghanaian donuts", image: "/images/bofrot.png", category: "snacks" },
-  { name: "Poloo", price: "Varies", description: "Fried coconut dough biscuits", image: "/images/poloo.png", category: "snacks" },
+  { name: "Poloo", tag: "New", price: "Varies", description: "Fried coconut dough biscuits", image: "/images/poloo.png", category: "snacks" },
   { name: "Kelewele", price: "Varies", description: "Spicy fried plantain cubes with ginger and pepper", image: "/images/kelewele.png", category: "snacks" },
   { name: "Kubecake", price: "Varies", description: "Traditional sweet coconut cake", image: "/images/kubecake.png", category: "snacks" },
 
   // --- PASTRIES ---
   { name: "Mini Pie", price: "Varies", description: "Handcrafted flaky pastry with meat or veggie filling", image: "/images/minipie.png", category: "pastries" },
-  { name: "Quiche", price: "Varies", description: "Savory open-faced pastry crust with a rich filling", image: "/images/quiche.png", category: "pastries" },
-  { name: "Yam Balls", price: "Varies", description: "Seasoned mashed yam coated in breadcrumbs and fried", image: "/images/yamballs.png", category: "pastries" },
-  { name: "Sausage Rolls", price: "Varies", description: "Savory sausage meat wrapped in flaky puff pastry", image: "/images/sausageroll.png", category: "pastries" },
+  { name: "Quiche", tag: "New", price: "Varies", description: "Savory open-faced pastry crust with a rich filling", image: "/images/quiche.png", category: "pastries" },
+  { name: "Yam Balls", tag: "New", price: "Varies", description: "Seasoned mashed yam coated in breadcrumbs and fried", image: "/images/yamballs.png", category: "pastries" },
+  { name: "Sausage Rolls", tag: "New", price: "Varies", description: "Savory sausage meat wrapped in flaky puff pastry", image: "/images/sausageroll.png", category: "pastries" },
 ];
 
 export const menuPackages = [
