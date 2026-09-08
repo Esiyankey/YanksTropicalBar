@@ -5,14 +5,24 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Toaster } from "sonner";
 
-import { Playfair_Display } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 
+/* Display face — headlines only */
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
-  weight: ["400", "500", "600", "700", "800", "900"], 
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
 });
+
+/* Text face — body copy, UI, forms */
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Yanks Tropical Bar",
   description: "Juices and Catering Services for Events",
@@ -27,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={playfair.variable}>
-      <body className={`${playfair.variable} antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <body className="antialiased">
         <Navbar />
         {children}
         <Footer />

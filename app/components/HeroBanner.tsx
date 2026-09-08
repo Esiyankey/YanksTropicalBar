@@ -1,123 +1,138 @@
 "use client";
 
-import Navbar from "./Navbar";
-import { ArrowDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const slides = [
+  { src: "/images/image11.jpeg", alt: "Guests served at a Yanks Tropical Bar setup" },
+  { src: "/images/image10.jpeg", alt: "Tropical juice bar styled for an event" },
+  { src: "/images/image5.jpeg", alt: "Cocktail and mocktail service in progress" },
+  { src: "/images/image2.jpeg", alt: "Finger food platters plated for guests" },
+];
+
+const highlights = [
+  "Local Bar Setup",
+  "Fresh Fruit Juices",
+  "Finger Foods",
+  "We Travel Nationwide",
+];
+
+const SLIDE_MS = 5500;
 
 export default function HeroCarousel() {
-  const images = [
-    "/images/image11.jpeg",
-    "/images/image10.jpeg",
-    "/images/image5.jpeg",
-    "/images/image2.jpeg",
-  ];
-
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
+  const goTo = useCallback((index: number) => setCurrent(index), []);
 
+  useEffect(() => {
+    const interval = setInterval(
+      () => setCurrent((prev) => (prev + 1) % slides.length),
+      SLIDE_MS,
+    );
     return () => clearInterval(interval);
-  }, []);
+  }, [current]);
 
   return (
-    <section className="relative h-screen w-full font-['Poppins']">
-      <div className="relative h-full w-full overflow-hidden">
-        {/* Image Carousel Layer */}
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === current ? "opacity-100" : "opacity-0"
-            }`}
-          >
+    <section className="relative flex min-h-[100svh] w-full flex-col justify-center overflow-hidden bg-ink">
+      {/* Slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={slide.src}
+          aria-hidden={index !== current}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+            index === current ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className={`relative h-full w-full ${index === current ? "animate-ken-burns" : ""}`}>
             <Image
-              src={image}
-              alt="Yanks Tropical Bar"
+              src={slide.src}
+              alt={slide.alt}
               fill
+              sizes="100vw"
               className="object-cover"
               priority={index === 0}
             />
           </div>
-        ))}
-
-        {/* Content Layer - Refined Alignment */}
-        <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center max-w-4xl"
-          >
-            <span className="bg-yellow-500/90 text-black px-5 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-8 shadow-lg">
-              Event Catering & Mixology
-            </span>
-
-            {/* Minimized Headline */}
-            <h1 className="text-5xl font-serif md:text-8xl font-semibold text-white leading-[1.1] drop-shadow-lg  tracking-tight">
-              Elevate Your <br />{" "}
-              <span className="text-yellow-500">Celebration</span>
-            </h1>
-
-            {/* Concise Subheadline */}
-            <p className="text-white/90 text-xs md:text-sm mt-6 max-w-2xl leading-relaxed font-medium drop-shadow-md">
-              From Weddings to Corporate Galas. Experience the finest Sobolo,
-              Asana, and Craft Cocktails paired with gourmet local snacks.
-            </p>
-
-            {/* Refined CTA */}
-            <div className="mt-10 flex flex-col md:flex-row gap-4">
-              <button
-                onClick={() => {
-                  const bookingSection = document.getElementById("booking");
-                  if (bookingSection) {
-                    bookingSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-                className="bg-[#f75128] hover:bg-[#d6411d] text-white px-8 py-3 rounded-full text-sm font-bold transition-all shadow-xl hover:shadow-[#f75128]/20"
-              >
-                Book the Experience
-              </button>
-              <button className="border border-white/50 hover:bg-white/10 text-white px-8 py-3 rounded-full text-sm font-bold backdrop-blur-sm transition-all">
-                <Link href="/menu">View Menu</Link>
-              </button>
-            </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="absolute bottom-10 flex flex-col items-center"
-            >
-              <span className="text-white text-[10px] tracking-[0.4em] uppercase mb-3 opacity-60">
-                Explore
-              </span>
-              <div className="text-yellow-500 animate-bounce">
-                <ArrowDown size={24} />
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
+      ))}
+
+      {/* Legibility scrim — directional, so the image still reads as an image */}
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/45 to-black/85" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,rgba(0,0,0,0.55)_100%)]" />
+
+      {/* Content */}
+      <div className="relative z-20 mx-auto w-full max-w-5xl px-6 pt-28 pb-44 text-center sm:pb-52 lg:pb-64">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col items-center"
+        >
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold backdrop-blur-sm sm:text-[11px]">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            Event Catering &amp; Mixology
+          </span>
+
+          <h1 className="font-display text-[2.75rem] leading-[1.05] font-semibold tracking-tight text-white drop-shadow-lg sm:text-6xl lg:text-7xl xl:text-8xl">
+            Elevate Your
+            <br />
+            <span className="text-gold italic">Celebration</span>
+          </h1>
+
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/85 drop-shadow sm:text-base">
+            From weddings to corporate galas — the finest Sobolo, Asana and craft
+            cocktails, paired with gourmet local snacks.
+          </p>
+
+          {/* CTAs — full width on mobile so they are comfortably tappable */}
+          <div className="mt-9 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
+            <Link
+              href="/#booking"
+              className="rounded-full bg-brand px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-brand/25 transition-all hover:bg-brand-dark hover:shadow-brand/40 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 focus-visible:outline-none"
+            >
+              Book the Experience
+            </Link>
+            <Link
+              href="/menu"
+              className="rounded-full border border-white/50 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/15 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/50 focus-visible:outline-none"
+            >
+              View Menu
+            </Link>
+          </div>
+
+          {/* Trust strip */}
+          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[10px] font-medium tracking-[0.14em] text-white/60 uppercase sm:gap-x-5 sm:text-[11px]">
+            {highlights.map((item, i) => (
+              <li key={item} className="flex items-center gap-3 sm:gap-5">
+                {i > 0 && <span className="hidden h-1 w-1 rounded-full bg-gold/70 sm:block" />}
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
 
-      {/* Subtle Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-
-      {/* Pagination dots */}
-      <div className="absolute bottom-12 right-12 flex flex-col gap-3 z-30 hidden md:flex">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`w-1 rounded-full transition-all duration-500 ${
-              index === current ? "bg-yellow-500 h-8" : "bg-white/30 h-4"
-            }`}
-          />
+      {/* Slide controls — horizontal on mobile, vertical rail on desktop */}
+      <div className="absolute bottom-32 left-1/2 z-30 flex -translate-x-1/2 gap-2 sm:bottom-36 lg:top-1/2 lg:right-10 lg:bottom-auto lg:left-auto lg:-translate-x-0 lg:-translate-y-1/2 lg:flex-col lg:gap-3">
+        {slides.map((slide, index) => (
+          <button
+            key={slide.src}
+            type="button"
+            onClick={() => goTo(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === current}
+            className="group p-1.5"
+          >
+            <span
+              className={`block rounded-full transition-all duration-500 ${
+                index === current
+                  ? "h-1.5 w-8 bg-gold lg:h-8 lg:w-1.5"
+                  : "h-1.5 w-4 bg-white/40 group-hover:bg-white/70 lg:h-4 lg:w-1.5"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

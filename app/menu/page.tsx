@@ -1,12 +1,17 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
+import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import HeroSection from "../components/HeroSection";
-import Image from "next/image";
+import MenuCard from "../components/MenuCard";
 import { menuItems, menuPackages } from "../data/menuData";
 
 const MenuPage = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const categories = ["all", "juice", "local drinks", "snacks", "pastries"];
 
@@ -14,48 +19,96 @@ const MenuPage = () => {
   const filteredItems = useMemo(() => {
     return menuItems.filter((item) => {
       const matchesTab = activeTab === "all" || item.category === activeTab;
-      const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSearch = item.name
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
       return matchesTab && matchesSearch;
     });
   }, [activeTab, searchQuery]);
 
+  /*
+   * ScrollTrigger.batch groups the cards that cross the viewport together into
+   * a single stagger, instead of each card animating on its own clock. It also
+   * re-runs cleanly whenever the filter changes the grid contents.
+   */
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const cards = gsap.utils.toArray<HTMLElement>(".menu-card");
+      if (!cards.length) return;
+
+      const mm = gsap.matchMedia();
+
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.set(cards, { opacity: 0, y: 30 });
+
+        ScrollTrigger.batch(cards, {
+          start: "top 88%",
+          once: true,
+          onEnter: (batch) =>
+            gsap.to(batch, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              stagger: 0.07,
+              ease: "power3.out",
+              overwrite: true,
+            }),
+        });
+      });
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set(cards, { opacity: 1, y: 0 });
+      });
+
+      return () => mm.revert();
+    },
+    { scope: gridRef, dependencies: [filteredItems], revertOnUpdate: true },
+  );
+
   return (
-    <div className="bg-[#F9F7F2] min-h-screen">
-      <HeroSection 
-        title="Yanks Tropical Bar" 
-        description="Authentic Ghanaian Flavors & Tropical Refreshments" 
-        image="/images/setup1.jpg" 
+    <div className="min-h-screen bg-cream">
+      <HeroSection
+        title="Yanks Tropical Bar"
+        description="Authentic Ghanaian Flavors & Tropical Refreshments"
+        image="/images/setup1.jpg"
         height="h-[60vh]"
       />
 
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto text-[#1A1A1A]">
-        
+      <section className="mx-auto max-w-7xl px-4 py-16 text-slate-900 md:px-8">
         {/* HEADER & SEARCH BAR */}
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
+        <div className="mb-12 flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="text-center md:text-left">
-            <h2 className="text-4xl font-serif tracking-tight mb-2 uppercase">The Menu</h2>
-            <p className="text-gray-400 font-sans text-xs uppercase tracking-[0.3em]">Freshly Prepared Daily</p>
+            <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-brand">
+              Freshly Prepared Daily
+            </span>
+            <h2 className="font-display text-4xl tracking-tight sm:text-5xl">
+              The Menu
+            </h2>
           </div>
 
-          <div className="w-full md:w-80 relative">
-            <input 
+          <div className="relative w-full md:w-80">
+            <input
               type="text"
               placeholder="Search for snacks or drinks..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-transparent border-b border-black/10 py-3 px-1 focus:outline-none focus:border-[#C19D60] transition-colors font-sans text-sm"
+              className="w-full rounded-full border border-slate-200 bg-white px-5 py-3 text-sm transition-colors placeholder:text-slate-400 focus:border-gold focus:ring-2 focus:ring-gold/25 focus:outline-none"
             />
           </div>
         </div>
 
         {/* CATEGORY TABS (Sticky for mobile usability) */}
-        <div className="flex overflow-x-auto no-scrollbar gap-8 mb-16 border-b border-black/5 pb-4 sticky top-0 bg-[#F9F7F2]/90 backdrop-blur-md z-20">
+        <div className="no-scrollbar sticky top-0 z-20 mb-12 flex gap-3 overflow-x-auto bg-cream/90 py-4 backdrop-blur-md">
           {categories.map((cat) => (
-            <button 
-              key={cat} 
+            <button
+              key={cat}
               onClick={() => setActiveTab(cat)}
-              className={`whitespace-nowrap uppercase tracking-[0.3em] text-[10px] md:text-xs transition-all duration-300 pb-2 ${
-                activeTab === cat ? "text-[#C19D60] border-b-2 border-[#C19D60] font-bold" : "text-gray-400 hover:text-black"
+              className={`shrink-0 rounded-full px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] whitespace-nowrap transition-all duration-300 md:text-[11px] ${
+                activeTab === cat
+                  ? "bg-slate-900 text-white"
+                  : "border border-slate-200 bg-white text-slate-500 hover:border-slate-900 hover:text-slate-900"
               }`}
             >
               {cat}
@@ -64,59 +117,59 @@ const MenuPage = () => {
         </div>
 
         {/* ITEM GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {filteredItems.map((item, i) => (
-            <div key={i} className="group border border-black/3 p-4 bg-white/50 hover:bg-white transition-all duration-500">
-              <div className="relative aspect-square mb-6 overflow-hidden">
-                <Image 
-                  src={item.image} 
-                  alt={item.name} 
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-1000" 
-                />
-              </div>
-              
-              <div className="flex justify-between items-baseline mb-2">
-                <h3 className="font-serif text-lg tracking-tight uppercase group-hover:text-[#C19D60] transition-colors">
-                  {item.name}
-                </h3>
-                <span className="text-[10px] font-bold text-[#C19D60]">{item.price}</span>
-              </div>
-              <p className="text-xs text-gray-500 font-sans leading-relaxed line-clamp-2">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
+        {filteredItems.length > 0 ? (
+          <div
+            ref={gridRef}
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-5"
+          >
+            {filteredItems.map((item) => (
+              <MenuCard key={item.name} item={item} className="menu-card" />
+            ))}
+          </div>
+        ) : (
+          <p className="py-20 text-center text-sm text-slate-400">
+            Nothing matches &ldquo;{searchQuery}&rdquo;. Try another search.
+          </p>
+        )}
 
         {/* EVENT PACKAGES SECTION */}
-        <div className="mt-32 pt-24 border-t border-black/5">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif mb-4">Event Packages</h2>
-            <p className="text-gray-400 text-xs uppercase tracking-widest">Tailored for your celebration</p>
+        <div className="mt-28 border-t border-slate-200 pt-20">
+          <div className="mb-14 text-center">
+            <span className="mb-3 block text-[10px] font-semibold uppercase tracking-[0.22em] text-brand">
+              Tailored for your celebration
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl">Event Packages</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {menuPackages.map((pkg) => (
-              <div key={pkg.id} className="p-10 border border-black/5 bg-white flex flex-col items-center text-center">
-                <span className="text-[#C19D60] text-3xl font-serif mb-2">{pkg.price}</span>
-                <span className="text-[10px] tracking-[0.4em] font-bold text-black mb-8 border-b border-[#C19D60] pb-2">
+              <div
+                key={pkg.id}
+                className="flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl"
+              >
+                <span className="font-display text-3xl font-bold text-gold-dark">
+                  {pkg.price}
+                </span>
+                <span className="mt-3 mb-8 border-b border-gold pb-2 text-[10px] font-bold tracking-[0.3em] text-slate-900">
                   {pkg.guests}
                 </span>
-                <ul className="space-y-4 mb-10 flex-1">
+                <ul className="mb-10 flex-1 space-y-4">
                   {pkg.details.map((detail, idx) => (
-                    <li key={idx} className="text-[11px] text-gray-600 font-sans tracking-wide">
+                    <li key={idx} className="text-[11px] tracking-wide text-slate-500">
                       {detail}
                     </li>
                   ))}
                 </ul>
-                <button className="text-[10px] uppercase tracking-[0.3em] font-bold border border-black px-6 py-3 hover:bg-black hover:text-white transition-all w-full">
+                <Link
+                  href="/#booking"
+                  className="w-full rounded-full border border-slate-900 px-6 py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:bg-slate-900 hover:text-white"
+                >
                   Book Now
-                </button>
+                </Link>
               </div>
             ))}
           </div>
-          <p className="text-center mt-12 text-[10px] text-gray-400 italic">
+          <p className="mt-12 text-center text-[10px] text-slate-400 italic">
             Note: Classy setup available at an additional cost.
           </p>
         </div>
