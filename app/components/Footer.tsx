@@ -53,14 +53,14 @@ export default function Footer() {
             </div>
 
             {/* Services Links */}
-            <div>
+            {/* <div>
               <h5 className="text-sm font-bold tracking-widest text-black mb-6">SERVICES</h5>
               <ul className="space-y-3">
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Weddings & Engagements</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Corporate Functions</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Private Parties</a></li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Get In Touch */}
             <div>
