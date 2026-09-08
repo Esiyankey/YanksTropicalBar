@@ -66,7 +66,7 @@ const MenuPage = () => {
         {/* ITEM GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {filteredItems.map((item, i) => (
-            <div key={i} className="group border border-black/[0.03] p-4 bg-white/50 hover:bg-white transition-all duration-500">
+            <div key={i} className="group border border-black/3 p-4 bg-white/50 hover:bg-white transition-all duration-500">
               <div className="relative aspect-square mb-6 overflow-hidden">
                 <Image 
                   src={item.image} 

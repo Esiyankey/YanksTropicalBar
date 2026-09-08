@@ -2,7 +2,7 @@ export const menuItems = [
   // --- FRUIT JUICE ---
   { name: "Pineapple Juice", price: "Varies", description: "Freshly squeezed tropical pineapple", image: "/images/pineapple.jpg", category: "juice" },
   { name: "Pineapple Ginger", price: "Varies", description: "Sweet pineapple with a spicy ginger kick", image: "/images/pine-ginger.jpg", category: "juice" },
-  { name: "Watermelon Juice", price: "Varies", description: "Hydrating and fresh watermelon", image: "/images/watermelon.jpg", category: "juice" },
+  { name: "Watermelon Juice", price: "Varies", description: "Hydrating and fresh watermelon", image: "/images/watermellon.jpg", category: "juice" },
   { name: "Pineapple Apple", price: "Varies", description: "A crisp blend of pineapple and apple", image: "/images/pine-apple.jpg", category: "juice" },
   { name: "Mango Juice", price: "Varies", description: "Rich, velvety mango pulp", image: "/images/mango.jpg", category: "juice" },
   { name: "Tamarind Juice", price: "Varies", description: "Tangy and refreshing traditional tamarind", image: "/images/tamarind.jpg", category: "juice" },
@@ -10,12 +10,12 @@ export const menuItems = [
   // --- LOCAL DRINKS ---
   { name: "Classic Sobolo", price: "Varies", description: "Traditional hibiscus spiced drink", image: "/images/sobolo.jpg", category: "local drinks" },
   { name: "Asaana", price: "Varies", description: "Caramelized corn drink", image: "/images/asana.jpg", category: "local drinks" },
-  { name: "Lamugin", price: "Varies", description: "Spiced millet drink", image: "/images/lamugin.jpg", category: "local drinks" },
+  { name: "Lamugin", price: "Varies", description: "Spiced millet drink", image: "/images/lamugine.jpg", category: "local drinks" },
   { name: "Palm Wine", price: "Varies", description: "Freshly tapped local palm wine", image: "/images/palm-wine.jpg", category: "local drinks" },
   { name: "Pito", price: "Varies", description: "Traditional fermented millet beer", image: "/images/pito.jpg", category: "local drinks" },
 
   // --- LOCAL SNACKS ---
-  { name: "Spring Rolls", price: "Varies", description: "Crispy pastry filled with seasoned vegetables or meat", image: "/images/spring-rolls.jpg", category: "snacks" },
+  { name: "Spring Rolls", price: "Varies", description: "Crispy pastry filled with seasoned vegetables or meat", image: "/images/springrolls.jpeg", category: "snacks" },
   { name: "Samosa", price: "Varies", description: "Savory fried triangular pastry with spicy filling", image: "/images/samosa.jpg", category: "snacks" },
   { name: "Money Bags", price: "Varies", description: "Crispy golden pouches filled with savory delights", image: "/images/money-bags.jpg", category: "snacks" },
   { name: "Gizzard Khebab", price: "Varies", description: "Spiced and grilled gizzards on skewers", image: "/images/gizzard.jpg", category: "snacks" },
@@ -25,8 +25,8 @@ export const menuItems = [
   { name: "Agbelikaklo", price: "Varies", description: "Crunchy fried cassava balls served with coconut", image: "/images/agbeli.jpg", category: "snacks" },
   { name: "Nkatecake", price: "Varies", description: "Sweet and crunchy peanut brittle", image: "/images/nkatie-cake.jpg", category: "snacks" },
   { name: "Kulikuli", price: "Varies", description: "Spicy, crunchy roasted peanut snacks", image: "/images/kulikuli.jpg", category: "snacks" },
-  { name: "Kosua ne Meko", price: "Varies", description: "Boiled eggs served with fresh spicy pepper sauce", image: "/images/egg-pepper.jpg", category: "snacks" },
-  { name: "Plantain Chips", price: "Varies", description: "Salty or spicy thinly sliced fried plantains", image: "/images/plantain-chips.jpg", category: "snacks" },
+  { name: "Kosua ne Meko", price: "Varies", description: "Boiled eggs served with fresh spicy pepper sauce", image: "/images/eggandpepper.jpg", category: "snacks" },
+  { name: "Plantain Chips", price: "Varies", description: "Salty or spicy thinly sliced fried plantains", image: "/images/plantain.jpeg", category: "snacks" },
   { name: "Adakoa", price: "Varies", description: "Traditional spicy corn and peanut balls", image: "/images/adakoa.jpg", category: "snacks" },
   { name: "Bofrot", price: "Varies", description: "Soft, fluffy traditional Ghanaian donuts", image: "/images/bofrot.jpg", category: "snacks" },
   { name: "Poloo", price: "Varies", description: "Fried coconut dough biscuits", image: "/images/poloo.jpg", category: "snacks" },
