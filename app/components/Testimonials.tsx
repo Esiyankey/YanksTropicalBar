@@ -1,29 +1,105 @@
-import Image from 'next/image'
-import { Quote } from 'lucide-react'
+import Image from "next/image";
+import { Quote } from "lucide-react";
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "Juliet Adobea",
-      role: "Personal Snacks",
-      content: "Yanks tropical bar offers the best sweetest local drinks and chops for your home and your event.And I testify to it that her spicy aroma of Samosa and Spring rolls hit me before I even took a bite,but the real magic was the pairing of the creamy sweetest of the millet drink,Asana and the hibiscus chilled drink pineapple juice, Mango juice was perfectly balanced by the coldness.And Every bite of the crunchy golden -brown Plantain chips,Atwomo offered a satisfying, making the entire experience feel like a celebration of texture 🥰Try Yanks tropical bar and give out your testimony as well The Sobolo was the talk of the day, and the presentation was pure royalty.",
-      image: "/images/couple.jpg"
-    },
-    {
-      name: "Abigail Yankey",
-      role: "CEO, Yank's Tropical Bar",
-      content: "The vice president of our company was impressed with the quality of the drinks and the cultural experience.",
-      image: "/images/couple2.jpg"
-    }
-  ]
+type Testimonial = {
+  name: string;
+  role: string;
+  content: string;
+  image?: string;
+  accent?: string;
+};
 
+const testimonials: Testimonial[] = [
+  {
+    name: "Juliet Adobea",
+    role: "Personal Snacks",
+    content:
+      "Yanks tropical bar offers the best sweetest local drinks and chops for your home and your event.And I testify to it that her spicy aroma of Samosa and Spring rolls hit me before I even took a bite,but the real magic was the pairing of the creamy sweetest of the millet drink,Asana and the hibiscus chilled drink pineapple juice, Mango juice was perfectly balanced by the coldness.And Every bite of the crunchy golden -brown Plantain chips,Atwomo offered a satisfying, making the entire experience feel like a celebration of texture 🥰Try Yanks tropical bar and give out your testimony as well The Sobolo was the talk of the day, and the presentation was pure royalty.",
+    image: "/images/couple.jpg",
+  },
+  {
+    name: "Abigail Yankey",
+    role: "CEO, Yank's Tropical Bar",
+    content:
+      "The vice president of our company was impressed with the quality of the drinks and the cultural experience.",
+    image: "/images/couple2.jpg",
+  },
+  {
+    name: "Nana Ama Owusu",
+    role: "Traditional Marriage",
+    content:
+      "From the palm wine service to the kelewele station, every detail felt intentional. Our elders kept asking who catered the day.",
+    accent: "from-amber-500 to-yellow-600",
+  },
+  {
+    name: "Kwame Asante",
+    role: "Milestone Birthday",
+    content:
+      "They turned my 40th into a proper tropical affair. The gizzard khebab ran out twice because guests kept coming back for more.",
+    accent: "from-emerald-500 to-teal-600",
+  },
+  {
+    name: "Selina Adjei",
+    role: "Outdooring Ceremony",
+    content:
+      "Setup was done before we even arrived, and the team stayed graceful all morning. The lamugine and kubecake were a beautiful nostalgic touch.",
+    accent: "from-rose-500 to-pink-600",
+  },
+  {
+    name: "Michael Tetteh",
+    role: "Product Activation",
+    content:
+      "We needed something that felt premium but unmistakably Ghanaian. Yanks delivered exactly that, and our brand photos came out stunning.",
+    accent: "from-sky-500 to-indigo-600",
+  },
+  {
+    name: "Priscilla Ofori",
+    role: "Bridal Shower",
+    content:
+      "The mocktail bar was the centrepiece of the whole evening. Warm, attentive staff and flavours my friends still text me about.",
+    accent: "from-fuchsia-500 to-purple-600",
+  },
+  {
+    name: "Emmanuel Nkrumah",
+    role: "Graduation Dinner",
+    content:
+      "Punctual, tidy and genuinely kind to every guest. The mango juice and spring rolls disappeared within minutes of service opening.",
+    accent: "from-orange-500 to-red-600",
+  },
+  {
+    name: "Yaa Serwaa Danquah",
+    role: "Anniversary Soirée",
+    content:
+      "Twenty five years of marriage deserved something special, and they honoured it. The tamarind juice took my husband straight back to his childhood.",
+    accent: "from-lime-500 to-green-600",
+  },
+  {
+    name: "Kojo Antwi-Boasiako",
+    role: "Church Anniversary",
+    content:
+      "Serving three hundred guests without a single hiccup is no small feat. The bofrot and nkatie cake platters were an absolute hit.",
+    accent: "from-cyan-500 to-blue-600",
+  },
+];
+
+function initials(name: string) {
+  return name
+    .split(" ")
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("");
+}
+
+function TestimonialCard({ t }: { t: Testimonial }) {
   return (
     <div className="mr-5 w-[280px] shrink-0 sm:mr-6 sm:w-[340px]">
       <div className="group flex h-full flex-col rounded-xl border border-white/10 bg-white/3 p-7 transition-all duration-300 hover:border-gold/40 hover:bg-white/6">
         {/* Star Rating - Smaller */}
         <div className="mb-4 flex gap-0.5">
           {[...Array(5)].map((_, i) => (
-            <span key={i} className="text-xs text-gold">★</span>
+            <span key={i} className="text-xs text-gold">
+              ★
+            </span>
           ))}
         </div>
 
@@ -46,13 +122,15 @@ export default function Testimonials() {
             </div>
           ) : (
             <div
-              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br ${t.accent ?? 'from-gold to-brand'} text-[11px] font-bold tracking-wide text-white ring-1 ring-white/10`}
+              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br ${t.accent ?? "from-gold to-brand"} text-[11px] font-bold tracking-wide text-white ring-1 ring-white/10`}
             >
               {initials(t.name)}
             </div>
           )}
           <div className="min-w-0">
-            <p className="truncate text-xs font-semibold tracking-wide text-white">{t.name}</p>
+            <p className="truncate text-xs font-semibold tracking-wide text-white">
+              {t.name}
+            </p>
             <p className="mt-0.5 text-[9px] font-bold uppercase tracking-widest text-gray-500">
               {t.role}
             </p>
@@ -62,7 +140,7 @@ export default function Testimonials() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default function Testimonials() {
@@ -86,7 +164,7 @@ export default function Testimonials() {
 
         <div
           className="animate-marquee-rtl flex w-max items-stretch group-hover/marquee:[animation-play-state:paused]"
-          style={{ ['--marquee-duration' as string]: '80s' }}
+          style={{ ["--marquee-duration" as string]: "80s" }}
         >
           {/* Rendered twice so the loop is seamless and never ends */}
           {[...testimonials, ...testimonials].map((t, i) => (
@@ -95,5 +173,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }
