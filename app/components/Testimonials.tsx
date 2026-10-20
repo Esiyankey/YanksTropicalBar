@@ -4,15 +4,15 @@ import { Quote } from 'lucide-react'
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Akosua Mensah",
-      role: "Wedding Engagement",
-      content: "The Golden celebration made our engagement ceremony unforgettable. The Sobolo was the talk of the day, and the presentation was pure royalty.",
+      name: "Juliet Adobea",
+      role: "Personal Snacks",
+      content: "Yanks tropical bar offers the best sweetest local drinks and chops for your home and your event.And I testify to it that her spicy aroma of Samosa and Spring rolls hit me before I even took a bite,but the real magic was the pairing of the creamy sweetest of the millet drink,Asana and the hibiscus chilled drink pineapple juice, Mango juice was perfectly balanced by the coldness.And Every bite of the crunchy golden -brown Plantain chips,Atwomo offered a satisfying, making the entire experience feel like a celebration of texture 🥰Try Yanks tropical bar and give out your testimony as well The Sobolo was the talk of the day, and the presentation was pure royalty.",
       image: "/images/couple.jpg"
     },
     {
-      name: "David Boateng",
-      role: "Corporate Launch",
-      content: "The corporate launch was a success thanks to their professional service. Our expatriate clients loved the Asana and the cultural touch.",
+      name: "Abigail Yankey",
+      role: "CEO, Yank's Tropical Bar",
+      content: "The vice president of our company was impressed with the quality of the drinks and the cultural experience.",
       image: "/images/couple2.jpg"
     }
   ]
