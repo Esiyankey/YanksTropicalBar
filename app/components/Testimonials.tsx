@@ -18,57 +18,79 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="bg-[#0f172a] py-16 px-6">
-      <div className="max-w-4xl mx-auto"> {/* Reduced from 7xl/5xl to 4xl for a tighter feel */}
-        
-        {/* Header - Compact proportions */}
-        <div className="mb-10 text-center md:text-left">
-          <span className="text-yellow-500 font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">
-            Guest Reviews
-          </span>
-          <h2 className="text-2xl md:text-3xl  text-white leading-tight">
-            Words from our Guests
-          </h2>
+    <div className="mr-5 w-[280px] shrink-0 sm:mr-6 sm:w-[340px]">
+      <div className="group flex h-full flex-col rounded-xl border border-white/10 bg-white/3 p-7 transition-all duration-300 hover:border-gold/40 hover:bg-white/6">
+        {/* Star Rating - Smaller */}
+        <div className="mb-4 flex gap-0.5">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="text-xs text-gold">★</span>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((t, i) => (
-            <div 
-              key={i} 
-              className="group bg-white/3 border border-white/10 p-7 rounded-xl hover:bg-white/6 transition-all duration-300"
-            >
-              {/* Star Rating - Smaller */}
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-xs">★</span>
-                ))}
-              </div>
+        {/* Quote - Standard body size */}
+        <p className="mb-6 flex-1 text-sm font-light italic leading-relaxed text-gray-400">
+          &ldquo;{t.content}&rdquo;
+        </p>
 
-              {/* Quote - Standard body size */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 italic font-light">
-                &ldquo;{t.content}&rdquo;
-              </p>
-
-              <div className="flex items-center gap-3 pt-5 border-t border-white/5">
-                {/* Avatar - Smaller (h-10 instead of 14) */}
-                <div className="relative h-10 w-10 rounded-full overflow-hidden ring-1 ring-white/10">
-                  <Image
-                    src={t.image}
-                    alt={t.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-white font-semibold text-xs tracking-wide">{t.name}</p>
-                  <p className="text-gray-500 text-[9px] font-bold uppercase tracking-widest mt-0.5">
-                    {t.role}
-                  </p>
-                </div>
-                {/* Subtle Quote Icon at the end */}
-                <Quote className="ml-auto text-white/5 w-4 h-4" />
-              </div>
+        <div className="flex items-center gap-3 border-t border-white/5 pt-5">
+          {/* Avatar - Smaller (h-10 instead of 14) */}
+          {t.image ? (
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-white/10">
+              <Image
+                src={t.image}
+                alt={t.name}
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
             </div>
+          ) : (
+            <div
+              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br ${t.accent ?? 'from-gold to-brand'} text-[11px] font-bold tracking-wide text-white ring-1 ring-white/10`}
+            >
+              {initials(t.name)}
+            </div>
+          )}
+          <div className="min-w-0">
+            <p className="truncate text-xs font-semibold tracking-wide text-white">{t.name}</p>
+            <p className="mt-0.5 text-[9px] font-bold uppercase tracking-widest text-gray-500">
+              {t.role}
+            </p>
+          </div>
+          {/* Subtle Quote Icon at the end */}
+          <Quote className="ml-auto h-4 w-4 shrink-0 text-white/5" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function Testimonials() {
+  return (
+    <section className="overflow-hidden bg-ink py-16 sm:py-20 lg:py-24">
+      {/* Header - Compact proportions */}
+      <div className="mx-auto mb-12 max-w-7xl px-6 text-center md:text-left">
+        <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">
+          Guest Reviews
+        </span>
+        <h2 className="font-display text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
+          Words from our Guests
+        </h2>
+      </div>
+
+      {/* Marquee - slides right to left on every breakpoint */}
+      <div className="group/marquee relative">
+        {/* Edge fades */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-linear-to-r from-ink to-transparent sm:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-linear-to-l from-ink to-transparent sm:w-24" />
+
+        <div
+          className="animate-marquee-rtl flex w-max items-stretch group-hover/marquee:[animation-play-state:paused]"
+          style={{ ['--marquee-duration' as string]: '80s' }}
+        >
+          {/* Rendered twice so the loop is seamless and never ends */}
+          {[...testimonials, ...testimonials].map((t, i) => (
+            <TestimonialCard key={i} t={t} />
           ))}
         </div>
       </div>

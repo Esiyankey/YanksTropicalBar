@@ -7,7 +7,7 @@ export default function Footer() {
 <footer className="bg-white border-t border-gray-300">
         <div className="max-w-7xl mx-auto px-8 py-16">
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
@@ -53,14 +53,14 @@ export default function Footer() {
             </div>
 
             {/* Services Links */}
-            <div>
+            {/* <div>
               <h5 className="text-sm font-bold tracking-widest text-black mb-6">SERVICES</h5>
               <ul className="space-y-3">
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Weddings & Engagements</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Corporate Functions</a></li>
                 <li><a href="#" className="text-gray-700 hover:text-red-600 transition-colors duration-300 text-sm">Private Parties</a></li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Get In Touch */}
             <div>
